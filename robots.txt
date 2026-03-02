@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.allstarlakespa.com/sitemap.xml
+
+# Block any uploaded drafts or admin folders if added later
+Disallow: /drafts/
+Disallow: /admin/
+Disallow: /private/
