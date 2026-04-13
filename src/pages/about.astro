@@ -1,0 +1,125 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout
+  title="About Us | All Star Massage and Spa Bellevue WA | Est. 2006"
+  description="Meet Starla Schwartz, LMP and our team of state-licensed massage therapists and estheticians at All Star Massage and Spa on Lake Bellevue. Est. 2006.">
+  <Nav slot="nav" />
+  <main class="page" id="page-about">
+<div class="about-banner">
+    <img src="photos/photo-banner-about.jpg"
+      alt="All Star Massage and Spa Bellevue WA lakeside healing retreat" width="1200" height="320" loading="lazy">
+    <div class="about-banner-txt">
+      <div>
+        <span class="lbl" style="color:var(--sage-lt)">Our Story</span>
+        <h1 class="h1" style="color:white">Where healing<br>found its <em style="color:var(--sage-lt)">home</em></h1>
+      </div>
+    </div>
+  </div>
+  <div class="c about-story">
+    <div>
+      <span class="lbl">Starla Schwartz, LMP · Founder &amp; Spa Director</span>
+      <h2 class="h2">18 years of care<br>on <em>Lake Bellevue</em></h2>
+      <div class="rule"></div>
+      <p>All Star Massage and Spa was founded on one belief: everyone deserves a place to truly heal, restore, and feel their very best. Since 2006, our team has brought that belief to life on the shores of Lake Bellevue — one session at a time.</p>
+      <blockquote>"Whether you seek a program of medical healing, a day of indulgence, or both kinds of care, we are the only spa for you."</blockquote>
+      <p>Starla Schwartz is a Licensed Massage Practitioner with a background in skincare, accredited at Bellevue Massage School. Her passion for making others look and feel their best led her to build a multi-therapist team of state-licensed professionals committed to whole-body wellness.</p>
+      <p>The team gives back to the community — donating regularly to women in need. Many of our therapists have been with us for over a decade, a testament to the culture Starla has built.</p>
+      <div class="stats-row">
+        <div class="stat"><strong>18+</strong><span>Years in Bellevue</span></div>
+        <div class="stat"><strong>4.1★</strong><span>Average Rating</span></div>
+        <div class="stat"><strong>136+</strong><span>Guest Reviews</span></div>
+      </div>
+      <div style="margin-top:2rem;padding-top:1.75rem;border-top:1px solid var(--stone-lt)">
+        <span class="lbl" style="margin-bottom:.5rem;display:block">Call Us</span>
+        <a href="tel:4254521772" style="font-family:var(--fd);font-size:2.4rem;font-weight:600;color:var(--sage-dk);letter-spacing:.02em;text-decoration:none;line-height:1">425.452.1772</a>
+        <p style="margin-top:.5rem;font-size:.78rem;color:var(--stone);letter-spacing:.07em;text-transform:uppercase">Mon &amp; Fri 9am–7pm &nbsp;·&nbsp; Tue–Thu 10am–9pm &nbsp;·&nbsp; Sat 9am–9pm</p>
+      </div>
+    </div>
+    <img src="photos/photo-about-story.jpg"
+      alt="Massage therapist providing therapeutic care Bellevue WA" width="600" height="400" loading="lazy">
+  </div>
+  <section class="staff-sec">
+    <div class="c">
+      <span class="lbl">Our Team</span>
+      <h2 class="h2">Meet the <em>therapists</em></h2>
+      <div class="rule"></div>
+      <p class="body-s" style="max-width:560px">State-licensed professionals who bring years of expertise and genuine care to every treatment. Each therapist customizes your session to your individual needs.</p>
+
+      <!-- VIDEO -->
+      <div style="margin:3rem 0;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000;border-radius:2px">
+        <iframe
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:none"
+          src="https://www.youtube.com/embed/KuCFONKxQ9M"
+          title="All Star Massage and Spa — Bellevue, WA"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="staff-grid">
+        <div class="staff-c">
+          <img src="photos/photo-staff-starla.jpg" alt="Starla Schwartz LMP — Spa Director, All Star Massage and Spa Bellevue WA" style="width:100%;height:240px;object-fit:cover;object-position:center 30%">
+          <div class="staff-info">
+            <h3>Starla Schwartz</h3>
+            <span class="st-title">LMP · Spa Director &amp; Founder</span>
+            <p>Licensed since 2006. Specializes in wellness massage, medical massage, and skincare. Accredited at Bellevue Massage School. One of the most sought-after therapists on the Eastside.</p>
+          </div>
+        </div>
+        <div class="staff-c">
+          <img src="photos/photo-staff-cheryl.jpg" alt="Cheryl Allison LMP — Massage Practitioner, All Star Massage and Spa Bellevue WA" style="width:100%;height:240px;object-fit:cover;object-position:center 20%">
+          <div class="staff-info">
+            <h3>Cheryl Allison</h3>
+            <span class="st-title">LMP · Massage Practitioner</span>
+            <p>Practicing since 2006. Deep tissue, injury treatment, sports massage, prenatal, hot stone, and Swedish. Deeply tuned in to each client's needs, with a focus on finding and releasing tension at its root.</p>
+          </div>
+        </div>
+        <div class="staff-c">
+          <img src="photos/photo-staff-james.jpg" alt="James Schmidt LMT — Licensed Massage Therapist, All Star Massage and Spa Bellevue WA" style="width:100%;height:240px;object-fit:cover;object-position:center 20%">
+          <div class="staff-info">
+            <h3>James Schmidt</h3>
+            <span class="st-title">LMT · Licensed Massage Therapist</span>
+            <p>With All Star since 2015. Former owner, director, and instructor of Bellevue Massage School Center for Healing Arts. Expert in reflexology and a wide range of bodywork. Accepts most insurance plans.</p>
+          </div>
+        </div>
+        <div class="staff-c">
+          <img src="photos/photo-staff-monica.jpg" alt="Monica Tooley LMT — Licensed Massage Therapist, All Star Massage and Spa Bellevue WA" style="width:100%;height:240px;object-fit:cover;object-position:center 20%">
+          <div class="staff-info">
+            <h3>Monica Tooley</h3>
+            <span class="st-title">LMT · Licensed Massage Therapist</span>
+            <p>Graduate of Cortiva Institute (1500-hour program, 2017). Specializes in hot stone, Swedish, treatment massage, hydrotherapy, body exfoliation, and body wraps. Accepts most insurance plans.</p>
+          </div>
+        </div>
+        <div class="staff-c">
+          <img src="photos/photo-staff-gabriel.jpg" alt="Gabriel Garrett-Singh LMT — Licensed Massage Therapist, All Star Massage and Spa Bellevue WA" style="width:100%;height:240px;object-fit:contain;object-position:center center;background:#f0ede8">
+          <div class="staff-info">
+            <h3>Gabriel Garrett-Singh</h3>
+            <span class="st-title">LMT · Licensed Massage Therapist</span>
+            <p>Joined our spa in 2024 with four years of experience from Care A Lot Health Spa, Massage Envy, and Elements. Known for his calm, caring presence and excellent deep tissue work. Guests consistently leave feeling at ease.</p>
+          </div>
+        </div>
+        <div class="staff-c">
+          <div class="staff-init">Je</div>
+          <div class="staff-info">
+            <h3>Jeannie Andherst</h3>
+            <span class="st-title">LMT · Licensed Massage Therapist</span>
+            <p>With our spa since 2016 and bringing over 20 years of massage therapy experience. A trusted, seasoned practitioner who knows how to deliver lasting relief. Accepts most insurance plans.</p>
+          </div>
+        </div>
+        <div class="staff-c">
+          <div class="staff-init">Jo</div>
+          <div class="staff-info">
+            <h3>Joni Bachellerie</h3>
+            <span class="st-title">LMP / Cosmetologist</span>
+            <p>Graduate of Cortiva Institute (2011). Combines massage therapy with cosmetology expertise. Certified in reflexology, with a deep passion for skin care and ongoing education in esthetics.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+  <Footer slot="footer" />
+</Layout>

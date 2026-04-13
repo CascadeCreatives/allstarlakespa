@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout
+  title="Spa Gift Certificates Bellevue WA | All Star Massage and Spa"
+  description="Give the gift of healing. Instant digital spa gift certificates for All Star Massage and Spa on Lake Bellevue. Any amount, any service, delivered by email.">
+  <Nav slot="nav" />
+  <main class="page" id="page-gift">
+<div class="gift-banner">
+    <img src="photos/photo-banner-gift.jpg"
+      alt="Spa gift certificate All Star Massage and Spa Bellevue WA" width="1200" height="250" loading="lazy">
+    <div class="gift-banner-txt">
+      <h1>Gift <em style="color:var(--sage-lt)">Certificates</em></h1>
+      <p>Give the gift of healing. Delivered instantly by email.</p>
+    </div>
+  </div>
+  <div class="c gift-body">
+    <div class="gift-vis">
+      <div class="gift-mock">
+        <small>All Star Massage &amp; Spa · Lake Bellevue</small>
+        <h3>Gift Certificate</h3>
+        <p>For any service · Any amount<br>9 Lake Bellevue Drive · Bellevue, WA<br><br>A gift of healing, restoration, and peace.</p>
+      </div>
+    </div>
+    <div class="gift-opts">
+      <p class="body-s" style="margin-bottom:.25rem">Choose any dollar amount or a specific service. Instant digital certificates are delivered by email immediately — no waiting, no shipping.</p>
+      <div class="gift-opt">
+        <div><h4>Instant Digital Certificate</h4><p>Any amount · Delivered by email · Any service</p></div>
+        <a href="https://allstarlakespa.boomtime.com/lgift" target="_blank" rel="noopener" class="btn btn-p">Purchase →</a>
+      </div>
+      <div class="gift-opt">
+        <div><h4>Custom Package Gift</h4><p>Call us to build a personalized Starlight Spa Package</p></div>
+        <a href="tel:4254521772" class="btn btn-o">Call Us</a>
+      </div>
+      <div class="gift-bonus">
+        <p><strong style="color:var(--char)">🎁 Current Special:</strong> Take a Spa Day — scented foot soak, paraffin dip, classic facial, aromatic scalp massage, beverage &amp; snack. All for <!--EDIT:gift_spaday_price-->$99<!--/EDIT:gift_spaday_price-->. A wonderful gift for someone who deserves a full day of care.</p>
+      </div>
+      <p class="body-s">Questions? <a href="tel:4254521772" style="color:var(--sage-dk)">425.452.1772</a> · Mon &amp; Fri 9am–7pm · Tue–Thu 10am–9pm · Sat 9am–9pm</p>
+    </div>
+  </div>
+  </main>
+  <Footer slot="footer" />
+</Layout>

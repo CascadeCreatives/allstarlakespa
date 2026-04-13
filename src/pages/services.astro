@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout
+  title="Spa Services Bellevue WA | Massage, Facials & Body Treatments | All Star"
+  description="Medical massage, wellness massage, facials, body treatments and spa packages at All Star Massage and Spa on Lake Bellevue. State-licensed. Insurance accepted.">
+  <Nav slot="nav" />
+  <main class="page" id="page-services">
+<div class="svc-banner">
+    <img src="photos/photo-banner-services.jpg"
+      alt="Massage and spa services All Star Lake Spa Bellevue WA" width="1200" height="300" loading="lazy">
+    <div class="svc-banner-txt">
+      <div>
+        <span class="lbl" style="color:var(--sage-lt)">Bellevue, WA</span>
+        <h1 class="h1" style="color:white">Massage &amp; Spa<br><em style="color:var(--sage-lt)">Services</em></h1>
+      </div>
+    </div>
+  </div>
+  <div class="svc-pg-intro"><div class="c"><p class="body-s" style="max-width:620px;padding:1.4rem 0">Our state-licensed therapists and estheticians customize every treatment to your individual needs — whether you're here for medical rehabilitation, stress relief, or a full day of restoration on Lake Bellevue in Bellevue, WA.</p></div></div>
+
+  <div class="c">
+    <div class="svc-blk">
+      <div class="svc-blk-l">
+        <div class="num">01</div>
+        <h2><em>Medical</em><br>Massage</h2>
+        <div class="rule"></div>
+        <a href="https://www.secure-booker.com/allstarmassage/MakeAppointment/Search.aspx" target="_blank" class="btn btn-p">Book Now</a>
+        <img class="svc-blk-photo" src="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?w=500&auto=format&fit=crop&q=75" alt="Medical massage Bellevue WA insurance accepted" width="500" height="185" loading="lazy">
+      </div>
+      <div class="svc-blk-c">
+        <p><!--EDIT:medical_desc1-->Our medical massage program focuses on physical healing, rehabilitation, and chronic pain reduction. Sessions are clinically designed — reducing inflammation, improving range of motion, addressing scar tissue, and relieving nerve compression. We bill most major insurance directly.<!--/EDIT:medical_desc1--></p>
+        <p><!--EDIT:medical_desc2-->Whether you're recovering from an injury, managing a chronic condition, or filing a Workers' Compensation claim, our credentialed therapists have the expertise to help.<!--/EDIT:medical_desc2--></p>
+        <div class="tags"><span class="tag">Injury Rehabilitation</span><span class="tag">Chronic Pain Relief</span><span class="tag">Post-Surgical Recovery</span><span class="tag">Neck &amp; Back</span><span class="tag">Shoulder &amp; Rotator Cuff</span><span class="tag">Sciatica</span><span class="tag">Insurance Billed</span><span class="tag">PIP Claims</span><span class="tag">Workers' Comp</span></div>
+        <p class="note-s">We accept Regence, Premera, Blue Cross Blue Shield, Aetna, United Healthcare, Kaiser, First Choice, PIP, and Workers' Comp. Please call your insurance to verify coverage before your visit. Questions? <a href="tel:4254521772">Call us at 425.452.1772</a>.</p>
+      </div>
+    </div>
+    <div class="svc-blk">
+      <div class="svc-blk-l">
+        <div class="num">02</div>
+        <h2><em>Wellness</em><br>&amp; Spa Massage</h2>
+        <div class="rule"></div>
+        <a href="https://www.secure-booker.com/allstarmassage/MakeAppointment/Search.aspx" target="_blank" class="btn btn-p">Book Now</a>
+        <img class="svc-blk-photo" src="photos/photo-svc-wellness.jpg" alt="Wellness spa massage Bellevue WA lakeside" width="500" height="185" loading="lazy">
+      </div>
+      <div class="svc-blk-c">
+        <p><!--EDIT:wellness_desc1-->Our wellness massage menu is designed to melt stress and renew your body, mind, and soul. Our most popular treatments — <strong>hot stone</strong> and <strong>deep tissue</strong> — draw guests back again and again. Every session is fully customized; our therapists listen and adapt in real time.<!--/EDIT:wellness_desc1--></p>
+        <p><!--EDIT:wellness_desc2-->On Lake Bellevue, our naturally calming environment deepens every session. Many guests arrive wound tight and leave genuinely restored.<!--/EDIT:wellness_desc2--></p>
+        <div class="tags"><span class="tag">Swedish Massage</span><span class="tag">Deep Tissue Massage</span><span class="tag">Hot Stone Massage</span><span class="tag">Prenatal Massage</span><span class="tag">Sports Massage</span><span class="tag">Reflexology</span><span class="tag">Cupping</span><span class="tag">Aromatherapy</span><span class="tag">Scalp Massage</span></div>
+      </div>
+    </div>
+    <div class="svc-blk">
+      <div class="svc-blk-l">
+        <div class="num">03</div>
+        <h2>Facials &amp;<br><em>Skin Care</em></h2>
+        <div class="rule"></div>
+        <a href="https://www.secure-booker.com/allstarmassage/MakeAppointment/Search.aspx" target="_blank" class="btn btn-p">Book Now</a>
+        <img class="svc-blk-photo" src="photos/photo-strip-1.jpg" alt="Facial skin care treatment Bellevue WA esthetician" width="500" height="185" loading="lazy">
+      </div>
+      <div class="svc-blk-c">
+        <p><!--EDIT:facials_intro-->Our estheticians provide expert, personalized facials tailored to your skin type and concerns. Every facial includes a detailed skin consultation so your treatment is precisely customized.<!--/EDIT:facials_intro--></p>
+        <div class="tags"><span class="tag">European Facial</span><span class="tag">Signature Facial</span><span class="tag">Anti-Aging</span><span class="tag">Brightening Facial</span><span class="tag">Sensitive Skin</span><span class="tag">Deep Cleansing</span><span class="tag">Hydration Treatment</span></div>
+
+        <div style="margin-top:1.5rem;border:1px solid var(--stone-lt);padding:1.5rem 2rem">
+          <p class="lbl" style="margin-bottom:1rem">Featured Treatment</p>
+          <h4 style="font-family:var(--fd);font-size:1.4rem;font-weight:300;margin-bottom:.3rem">European Facial</h4>
+          <p style="font-size:.82rem;color:var(--sage-dk);font-weight:500;margin-bottom:.75rem"><!--EDIT:facial_duration-->1 hr 25 min<!--/EDIT:facial_duration--> &nbsp;·&nbsp; <!--EDIT:facial_price-->$150<!--/EDIT:facial_price--></p>
+          <p class="svc-blk-c p" style="font-size:.88rem"><!--EDIT:facial_desc-->A deeply relaxing facial using steam vapor to open pores, allowing gentle cleansing and exfoliation. A nutrient-rich, skin-specific masque then tones and tightens the skin for amazing results, followed by toning and moisture protection. Includes a soothing massage of the face, neck, scalp, and décolleté.<!--/EDIT:facial_desc--></p>
+        </div>
+
+        <p class="note-s" style="margin-top:1.25rem">Please call your insurance to verify coverage for skin care treatments before your visit.</p>
+      </div>
+    </div>
+    <div class="svc-blk">
+      <div class="svc-blk-l">
+        <div class="num">04</div>
+        <h2><em>Body</em><br>Treatments</h2>
+        <div class="rule"></div>
+        <a href="https://www.secure-booker.com/allstarmassage/MakeAppointment/Search.aspx" target="_blank" class="btn btn-p">Book Now</a>
+        <img class="svc-blk-photo" src="photos/photo-svc-body.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?w=500&auto=format&fit=crop&q=75'" alt="Body treatment spa Bellevue WA Pacific Northwest" width="500" height="185" loading="lazy">
+      </div>
+      <div class="svc-blk-c">
+        <p><!--EDIT:body_desc-->Restorative body treatments that nourish skin deeply, detoxify, and deliver total-body relaxation from head to toe. These immersive experiences complement massage beautifully.<!--/EDIT:body_desc--></p>
+        <div class="tags"><span class="tag">Body Wraps</span><span class="tag">Mud Treatments</span><span class="tag">Exfoliating Scrubs</span><span class="tag">Detox Treatments</span><span class="tag">M'Lis Products</span><span class="tag">Foot Soak &amp; Paraffin</span><span class="tag">Foot Massage — <!--EDIT:foot_price-->$55<!--/EDIT:foot_price--></span></div>
+        <p class="note-s" style="margin-top:1rem"><strong>Spa Day Special:</strong> Scented foot soak, paraffin dip, classic facial, aromatic scalp massage, beverage &amp; snack — <!--EDIT:spaday_body_price-->$99<!--/EDIT:spaday_body_price-->. <a href="/specials">View current specials →</a></p>
+      </div>
+    </div>
+    <div class="svc-blk">
+      <div class="svc-blk-l">
+        <div class="num">05</div>
+        <h2>Starlight<br><em>Spa Packages</em></h2>
+        <div class="rule"></div>
+        <a href="https://www.secure-booker.com/allstarmassage/MakeAppointment/Search.aspx" target="_blank" class="btn btn-p">Book Now</a>
+        <img class="svc-blk-photo" src="photos/photo-svc-packages.jpg" alt="Luxury spa package Lake Bellevue Bellevue WA" width="500" height="185" style="object-position:center top" loading="lazy">
+      </div>
+      <div class="svc-blk-c">
+        <p><!--EDIT:packages_desc-->Multi-treatment packages combining massage, facial, and body care into one curated experience — perfect for birthdays, anniversaries, bridal days, or simply when you need full restoration on Lake Bellevue.<!--/EDIT:packages_desc--></p>
+        <div class="tags"><span class="tag">Massage + Facial</span><span class="tag">Full Day Retreat</span><span class="tag">Couples Packages</span><span class="tag">Birthday Packages</span><span class="tag">Bridal Spa Day</span><span class="tag">Custom Packages</span></div>
+        <p class="note-s" style="margin-top:1rem">Design a custom package — call us: <a href="tel:4254521772">425.452.1772</a></p>
+      </div>
+    </div>
+  </div>
+  </main>
+  <Footer slot="footer" />
+</Layout>
