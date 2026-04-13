@@ -166,10 +166,11 @@ em{font-style:italic;color:var(--sage-dk)}
 .sp-hero-fine{font-size:.62rem;letter-spacing:.06em;color:rgba(250,249,247,.3);text-transform:uppercase}
 .sp-includes{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:2.5rem}
 .sp-includes h3{font-family:var(--fd);font-size:1.3rem;font-weight:300;color:var(--white);margin-bottom:1.5rem}
-.sp-includes-grid{display:grid;grid-template-columns:1fr 1fr;gap:.1rem}
+.sp-includes-grid{display:grid;grid-template-columns:1fr;gap:.1rem}
 .sp-inc{display:flex;align-items:center;gap:.9rem;padding:.75rem .5rem;border-bottom:1px solid rgba(255,255,255,.06);font-size:.85rem;color:rgba(250,249,247,.8)}
 .sp-inc-num{font-family:var(--fd);font-size:1.3rem;font-weight:300;color:var(--sage-lt);width:1.8rem;flex-shrink:0}
-.sp-includes-note{font-size:.72rem;color:rgba(250,249,247,.35);margin-top:1.2rem;line-height:1.5}
+.sp-includes-plus{font-size:.82rem;color:rgba(250,249,247,.55);margin-top:1rem;font-style:italic}
+.sp-includes-note{font-size:.72rem;color:rgba(250,249,247,.35);margin-top:.8rem;line-height:1.5}
 
 .sp-trust{background:var(--sage-dk);padding:.85rem 0;display:flex;align-items:center;justify-content:center;gap:1.2rem;flex-wrap:wrap;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(250,249,247,.85)}
 .sp-trust .td{opacity:.3}
