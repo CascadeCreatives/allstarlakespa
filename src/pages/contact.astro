@@ -1,20 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Banner from '../components/Banner.astro';
+import InsuranceBadges from '../components/InsuranceBadges.astro';
 ---
 <Layout
   title="Contact & Hours | All Star Massage and Spa | 425.452.1772"
   description="Contact All Star Massage and Spa at 9 Lake Bellevue Drive Suite 112, Bellevue WA. Call 425.452.1772. Mon & Fri 9am-7pm, Tue-Thu 10am-9pm, Sat 9am-9pm.">
   <main class="page" id="main-content">
-<div class="contact-banner">
-    <img src="photos/photo-banner-contact.jpg"
-      alt="All Star Massage and Spa on Lake Bellevue Bellevue WA contact location" width="1200" height="250" loading="lazy">
-    <div class="contact-banner-txt">
-      <div>
-        <span class="lbl" style="color:var(--sage-lt)">Come find us</span>
-        <h1 class="h1" style="color:white">Visit us on<br><em style="color:var(--sage-lt)">Lake Bellevue</em></h1>
-      </div>
-    </div>
-  </div>
+<Banner image="photos/photo-banner-contact.jpg" imageAlt="All Star Massage and Spa on Lake Bellevue Bellevue WA contact location" label="Come find us" height="250px">
+    <h1 class="h1" style="color:white">Visit us on<br><em style="color:var(--sage-lt)">Lake Bellevue</em></h1>
+  </Banner>
   <div class="c contact-grid">
     <div class="ci">
       <div>
@@ -55,18 +50,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="ins-box2">
         <span class="lbl">Insurance &amp; Billing · Medical Massage Bellevue</span>
         <h3>Covered by most<br><em>major insurance plans</em></h3>
-        <div class="ins-badges" role="list">
-          <span class="ins-b" role="listitem">Regence</span>
-          <span class="ins-b" role="listitem">Premera</span>
-          <span class="ins-b" role="listitem">Blue Cross Blue Shield</span>
-          <span class="ins-b" role="listitem">Aetna</span>
-          <span class="ins-b" role="listitem">United Healthcare</span>
-          <span class="ins-b" role="listitem">Kaiser Permanente</span>
-          <span class="ins-b" role="listitem">First Choice</span>
-          <span class="ins-b" role="listitem">PIP Claims</span>
-          <span class="ins-b" role="listitem">Workers' Compensation</span>
-        </div>
-        <p class="ins-note" style="margin-top:.9rem">Coverage varies by plan. Call to verify: <a href="tel:4254521772" style="color:var(--sage-dk)">425.452.1772</a></p>
+        <InsuranceBadges />
       </div>
     </div>
   </div>

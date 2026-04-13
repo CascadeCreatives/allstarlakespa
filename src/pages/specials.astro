@@ -1,19 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Banner from '../components/Banner.astro';
 ---
 <Layout
   title="Monthly Specials | All Star Massage and Spa Bellevue WA"
   description="Current spa specials and monthly offers at All Star Massage and Spa on Lake Bellevue. Medical massage insurance accepted. Gift certificates available.">
   <main class="page" id="main-content">
-<div class="sp-banner-wrap">
-    <img src="photos/photo-strip-4.jpg" alt="All Star Massage and Spa on Lake Bellevue aerial exterior Bellevue WA" loading="lazy">
-    <div class="sp-banner-txt">
-      <div>
-        <span class="lbl" style="color:var(--sage-lt)">Monthly Offers · Bellevue, WA</span>
-        <h1>This month's<br><em style="color:var(--sage-lt)">specials</em></h1>
-      </div>
-    </div>
-  </div>
+<Banner image="photos/photo-strip-4.jpg" imageAlt="All Star Massage and Spa on Lake Bellevue aerial exterior Bellevue WA" label="Monthly Offers · Bellevue, WA" height="320px">
+    <h1 class="h1" style="color:white">This month's<br><em style="color:var(--sage-lt)">specials</em></h1>
+  </Banner>
   <div class="c">
 
     <!-- ═══ EDITABLE SPECIALS — UPDATE MONTHLY ═══ -->

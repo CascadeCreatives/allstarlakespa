@@ -1,20 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Banner from '../components/Banner.astro';
 ---
 <Layout
   title="Spa Services Bellevue WA | Massage, Facials & Body Treatments | All Star"
   description="Medical massage, wellness massage, facials, body treatments and spa packages at All Star Massage and Spa on Lake Bellevue. State-licensed. Insurance accepted.">
   <main class="page" id="main-content">
-<div class="svc-banner">
-    <img src="photos/photo-banner-services.jpg"
-      alt="Massage and spa services All Star Lake Spa Bellevue WA" width="1200" height="300" loading="lazy">
-    <div class="svc-banner-txt">
-      <div>
-        <span class="lbl" style="color:var(--sage-lt)">Bellevue, WA</span>
-        <h1 class="h1" style="color:white">Massage &amp; Spa<br><em style="color:var(--sage-lt)">Services</em></h1>
-      </div>
-    </div>
-  </div>
+  <Banner image="photos/photo-banner-services.jpg" imageAlt="Massage and spa services All Star Lake Spa Bellevue WA" label="Bellevue, WA">
+    <h1 class="h1" style="color:white">Massage &amp; Spa<br><em style="color:var(--sage-lt)">Services</em></h1>
+  </Banner>
   <div class="svc-pg-intro"><div class="c"><p class="body-s" style="max-width:620px;padding:1.4rem 0">Our state-licensed therapists and estheticians customize every treatment to your individual needs — whether you're here for medical rehabilitation, stress relief, or a full day of restoration on Lake Bellevue in Bellevue, WA.</p></div></div>
 
   <div class="c">

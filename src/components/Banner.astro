@@ -1,0 +1,18 @@
+---
+interface Props {
+  image: string;
+  imageAlt: string;
+  label?: string;
+  height?: string;
+}
+const { image, imageAlt, label, height = '300px' } = Astro.props;
+---
+<div class="page-banner" style={`height:${height}`}>
+  <img src={image} alt={imageAlt} width="1200" height="300" loading="lazy">
+  <div class="page-banner-overlay">
+    <div>
+      {label && <span class="lbl" style="color:var(--sage-lt)">{label}</span>}
+      <slot />
+    </div>
+  </div>
+</div>

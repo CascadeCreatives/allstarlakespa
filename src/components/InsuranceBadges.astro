@@ -1,0 +1,11 @@
+---
+const providers = [
+  'Regence', 'Premera', 'Blue Cross Blue Shield', 'Aetna',
+  'United Healthcare', 'Kaiser Permanente', 'First Choice',
+  'PIP Claims', "Workers' Compensation"
+];
+---
+<div class="ins-badges" role="list" aria-label="Accepted insurance plans">
+  {providers.map(p => <span class="ins-b" role="listitem">{p}</span>)}
+</div>
+<p class="ins-note">Coverage varies by plan. Call to verify: <a href="tel:4254521772" style="color:var(--sage-dk)">425.452.1772</a></p>

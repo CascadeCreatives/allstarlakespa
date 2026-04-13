@@ -1,20 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Banner from '../components/Banner.astro';
 ---
 <Layout
   title="About Us | All Star Massage and Spa Bellevue WA | Est. 2006"
   description="Meet Starla Schwartz, LMP and our team of state-licensed massage therapists and estheticians at All Star Massage and Spa on Lake Bellevue. Est. 2006.">
   <main class="page" id="main-content">
-<div class="about-banner">
-    <img src="photos/photo-banner-about.jpg"
-      alt="All Star Massage and Spa Bellevue WA lakeside healing retreat" width="1200" height="320" loading="lazy">
-    <div class="about-banner-txt">
-      <div>
-        <span class="lbl" style="color:var(--sage-lt)">Our Story</span>
-        <h1 class="h1" style="color:white">Where healing<br>found its <em style="color:var(--sage-lt)">home</em></h1>
-      </div>
-    </div>
-  </div>
+<Banner image="photos/photo-banner-about.jpg" imageAlt="All Star Massage and Spa Bellevue WA lakeside healing retreat" label="Our Story" height="320px">
+    <h1 class="h1" style="color:white">Where healing<br>found its <em style="color:var(--sage-lt)">home</em></h1>
+  </Banner>
   <div class="c about-story">
     <div>
       <span class="lbl">Starla Schwartz, LMP · Founder &amp; Spa Director</span>

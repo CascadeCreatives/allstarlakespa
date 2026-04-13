@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import InsuranceBadges from '../components/InsuranceBadges.astro';
 ---
 <Layout title="Massage Bellevue WA | All Star Massage and Spa | Lake Bellevue">
   <main class="page" id="main-content">
@@ -176,18 +177,7 @@ import Layout from '../layouts/Layout.astro';
         <a href="/contact" class="btn btn-p">Verify Your Coverage →</a>
       </div>
       <div>
-        <div class="ins-badges" role="list" aria-label="Accepted insurance plans">
-          <span class="ins-b" role="listitem">Regence</span>
-          <span class="ins-b" role="listitem">Premera</span>
-          <span class="ins-b" role="listitem">Blue Cross Blue Shield</span>
-          <span class="ins-b" role="listitem">Aetna</span>
-          <span class="ins-b" role="listitem">United Healthcare</span>
-          <span class="ins-b" role="listitem">Kaiser Permanente</span>
-          <span class="ins-b" role="listitem">First Choice</span>
-          <span class="ins-b" role="listitem">PIP Claims</span>
-          <span class="ins-b" role="listitem">Workers' Compensation</span>
-        </div>
-        <p class="ins-note">Coverage varies by plan and therapist. Call <a href="tel:4254521772" style="color:var(--sage-dk)">425.452.1772</a> to verify before your first visit.</p>
+        <InsuranceBadges />
       </div>
     </div>
   </section>
