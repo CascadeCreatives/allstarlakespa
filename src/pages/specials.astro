@@ -1,55 +1,110 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Banner from '../components/Banner.astro';
+import InsuranceBadges from '../components/InsuranceBadges.astro';
 ---
 <Layout
-  title="Monthly Specials | All Star Massage and Spa Bellevue WA"
-  description="Current spa specials and monthly offers at All Star Massage and Spa on Lake Bellevue. Medical massage insurance accepted. Gift certificates available.">
+  title="April Spa Specials Bellevue WA | $99 Spa Day | All Star Massage"
+  description="This month's spa special: Take a Spa Day for $99 — foot soak, paraffin dip, facial, scalp massage, beverage & snack. All Star Massage and Spa on Lake Bellevue, Bellevue WA. Book now.">
   <main class="page" id="main-content">
-<Banner image="photos/photo-strip-4.jpg" imageAlt="All Star Massage and Spa on Lake Bellevue aerial exterior Bellevue WA" label="Monthly Offers · Bellevue, WA" height="320px">
-    <h1 class="h1" style="color:white">This month's<br><em style="color:var(--sage-lt)">specials</em></h1>
+  <Banner image="photos/photo-strip-4.jpg" imageAlt="All Star Massage and Spa on Lake Bellevue — monthly specials Bellevue WA" label="Limited Offer · Bellevue, WA" height="320px">
+    <h1 class="h1" style="color:white">This month at<br><em style="color:var(--sage-lt)">the lake</em></h1>
   </Banner>
-  <div class="c">
 
-    <!-- ═══ EDITABLE SPECIALS — UPDATE MONTHLY ═══ -->
-    <div class="sp-grid">
-      <div class="sp-c sp-feat">
-        <span class="sp-mo">Featured Special · Current</span>
-        <h3><!--EDIT:special_title-->Take a Spa Day<!--/EDIT:special_title--></h3>
-        <span class="sp-price"><!--EDIT:special_price-->$99<!--/EDIT:special_price--></span>
-        <p class="sp-desc"><!--EDIT:special_desc-->Treat yourself or a loved one to a complete spa experience — scented foot soak, paraffin dip for feet, classic facial, aromatic scalp massage, plus a beverage and snack. Pure restoration, head to toe.<!--/EDIT:special_desc--></p>
-        <p class="sp-exp"><!--EDIT:special_fine-->*Not valid with Spa Finder, Spa Week, or any other discount. Call to reserve: 425.452.1772<!--/EDIT:special_fine--></p>
-        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.75rem">
-          <a href="https://www.secure-booker.com/allstarmassage/MakeAppointment/Search.aspx" target="_blank" class="btn btn-g">Book This Special →</a>
-          <a href="https://allstarlakespa.boomtime.com/lgift" target="_blank" class="btn btn-g">Give as a Gift →</a>
+  <!-- ═══ FEATURED SPECIAL ═══ -->
+  <section class="sp-hero">
+    <div class="c">
+      <div class="sp-hero-grid">
+        <div class="sp-hero-content">
+          <span class="lbl" style="color:var(--sage-lt)"><!--EDIT:special_title-->Take a Spa Day<!--/EDIT:special_title--> · Featured Special</span>
+          <h2 class="sp-hero-h">Six treatments.<br>One price.<br><em>Pure restoration.</em></h2>
+          <div class="sp-hero-price">
+            <span class="sp-hero-amount"><!--EDIT:special_price-->$99<!--/EDIT:special_price--></span>
+            <span class="sp-hero-value">A $210+ value</span>
+          </div>
+          <p class="sp-hero-desc"><!--EDIT:special_desc-->Treat yourself or a loved one to a complete spa experience — scented foot soak, paraffin dip for feet, classic facial, aromatic scalp massage, plus a beverage and snack. Pure restoration, head to toe.<!--/EDIT:special_desc--></p>
+          <div class="sp-hero-ctas">
+            <a href="https://www.secure-booker.com/allstarmassage/MakeAppointment/Search.aspx" target="_blank" rel="noopener" class="btn btn-p btn-lg">Book This Special →</a>
+            <a href="https://allstarlakespa.boomtime.com/lgift" target="_blank" rel="noopener" class="btn btn-o btn-lg">Give as a Gift →</a>
+          </div>
+          <p class="sp-hero-fine"><!--EDIT:special_fine-->*Not valid with Spa Finder, Spa Week, or any other discount. Call to reserve: 425.452.1772<!--/EDIT:special_fine--></p>
+        </div>
+        <div class="sp-hero-visual">
+          <div class="sp-includes">
+            <h3>What's included</h3>
+            <div class="sp-includes-grid">
+              <div class="sp-inc"><span class="sp-inc-num">01</span><span>Scented Foot Soak</span></div>
+              <div class="sp-inc"><span class="sp-inc-num">02</span><span>Paraffin Dip for Feet</span></div>
+              <div class="sp-inc"><span class="sp-inc-num">03</span><span>Classic Facial</span></div>
+              <div class="sp-inc"><span class="sp-inc-num">04</span><span>Aromatic Scalp Massage</span></div>
+              <div class="sp-inc"><span class="sp-inc-num">05</span><span>Beverage</span></div>
+              <div class="sp-inc"><span class="sp-inc-num">06</span><span>Snack</span></div>
+            </div>
+            <p class="sp-includes-note">Every treatment by a state-licensed professional in our lakeside studio.</p>
+          </div>
         </div>
       </div>
-      <div class="sp-c">
-        <span class="sp-mo">Ongoing</span>
-        <h3>Medical Massage</h3>
-        <span class="sp-price">Insurance Accepted</span>
-        <p class="sp-desc"><!--EDIT:special_medical_desc-->Your massage may already be covered. We bill Regence, Premera, Blue Cross Blue Shield, Aetna, United Healthcare, Kaiser Permanente, and First Choice. Call us to verify — it takes two minutes.<!--/EDIT:special_medical_desc--></p>
-        <p class="sp-exp">Call: 425.452.1772 · Mon &amp; Fri 9am–7pm · Tue–Thu 10am–9pm · Sat 9am–9pm</p>
-      </div>
-      <div class="sp-c">
-        <span class="sp-mo">Ongoing</span>
-        <h3>Gift Certificates</h3>
-        <span class="sp-price">Any Amount</span>
-        <p class="sp-desc"><!--EDIT:special_gift_desc-->The perfect gift for birthdays, anniversaries, or thank-yous. Instant digital delivery by email. Redeemable for any service at our lakeside spa in Bellevue, WA.<!--/EDIT:special_gift_desc--></p>
-        <p class="sp-exp">Purchase online 24/7 — delivered immediately by email</p>
-      </div>
     </div>
-    <!-- ═══ END EDITABLE SPECIALS ═══ -->
+  </section>
 
-    <div class="sp-divider"></div>
-    <div style="text-align:center;padding-bottom:4rem">
-      <p class="lbl">Ready to book?</p>
-      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:.5rem">
-        <a href="https://www.secure-booker.com/allstarmassage/MakeAppointment/Search.aspx" target="_blank" class="btn btn-p btn-lg">Book an Appointment →</a>
-        <a href="https://allstarlakespa.boomtime.com/lgift" target="_blank" class="btn btn-o btn-lg">Buy a Gift Certificate →</a>
-      </div>
-      <p class="body-s" style="margin-top:1.2rem;color:var(--stone)">Or call: <a href="tel:4254521772" style="color:var(--sage-dk)">425.452.1772</a> · Mon &amp; Fri 9am–7pm · Tue–Thu 10am–9pm · Sat 9am–9pm</p>
-    </div>
+  <!-- ═══ TRUST BAR ═══ -->
+  <div class="sp-trust">
+    <span>Est. 2006</span><span class="td">·</span>
+    <span>20 Years in Bellevue</span><span class="td">·</span>
+    <span>136+ Reviews</span><span class="td">·</span>
+    <span>State-Licensed</span><span class="td">·</span>
+    <span>On Lake Bellevue</span>
   </div>
+
+  <!-- ═══ INSURANCE + GIFT ═══ -->
+  <section class="sp-secondary">
+    <div class="c">
+      <div class="sp-secondary-grid">
+        <div class="sp-card">
+          <span class="lbl">Your Massage May Be Covered</span>
+          <h3 class="sp-card-h">Insurance-billed<br><em>medical massage</em></h3>
+          <div class="rule"></div>
+          <p class="body-s"><!--EDIT:special_medical_desc-->Your massage may already be covered. We bill Regence, Premera, Blue Cross Blue Shield, Aetna, United Healthcare, Kaiser Permanente, and First Choice. Call us to verify — it takes two minutes.<!--/EDIT:special_medical_desc--></p>
+          <InsuranceBadges />
+          <a href="tel:4254521772" class="btn btn-p sp-card-cta">Call to Verify: 425.452.1772</a>
+        </div>
+        <div class="sp-card sp-card-gift">
+          <span class="lbl" style="color:var(--sage-lt)">Give the Gift of Healing</span>
+          <h3 class="sp-card-h" style="color:white">Instant gift<br><em style="color:var(--sage-lt)">certificates</em></h3>
+          <div class="rule" style="background:var(--sage-lt)"></div>
+          <p class="sp-card-gift-desc"><!--EDIT:special_gift_desc-->The perfect gift for birthdays, anniversaries, or thank-yous. Instant digital delivery by email. Redeemable for any service at our lakeside spa in Bellevue, WA.<!--/EDIT:special_gift_desc--></p>
+          <p class="sp-card-gift-note">Purchase online 24/7 — delivered immediately by email</p>
+          <a href="https://allstarlakespa.boomtime.com/lgift" target="_blank" rel="noopener" class="btn btn-g sp-card-cta">Purchase a Gift Certificate →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ REVIEW ═══ -->
+  <section class="sp-review">
+    <div class="c">
+      <blockquote class="sp-quote">
+        <div class="sp-quote-stars" aria-label="5 out of 5 stars" role="img">★★★★★</div>
+        <p>I couldn't stand up without constant pain and one visit brought instant pain relief. I was so relieved all I could do was cry. I consider this one of the most important things I do to maintain my health and lifestyle.</p>
+        <cite>— Verified Guest · Google</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ═══ BOTTOM CTA ═══ -->
+  <section class="sp-bottom">
+    <div class="c tc">
+      <span class="lbl">Ready to book?</span>
+      <h2 class="h2">Your lakeside escape<br><em>starts here</em></h2>
+      <div class="rule rc"></div>
+      <div class="sp-bottom-btns">
+        <a href="https://www.secure-booker.com/allstarmassage/MakeAppointment/Search.aspx" target="_blank" rel="noopener" class="btn btn-p btn-lg">Book an Appointment →</a>
+        <a href="https://allstarlakespa.boomtime.com/lgift" target="_blank" rel="noopener" class="btn btn-o btn-lg">Buy a Gift Certificate →</a>
+      </div>
+      <a href="tel:4254521772" class="sp-bottom-phone">425.452.1772</a>
+      <p class="sp-bottom-hours">Mon &amp; Fri 9am–7pm · Tue–Thu 10am–9pm · Sat 9am–9pm</p>
+      <p class="sp-bottom-addr">9 Lake Bellevue Drive, Suite 112 · Bellevue, WA 98005<br>Serving Bellevue, Kirkland, Redmond, Issaquah, Mercer Island &amp; the Eastside</p>
+    </div>
+  </section>
   </main>
 </Layout>
