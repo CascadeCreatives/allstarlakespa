@@ -1,0 +1,84 @@
+---
+/**
+ * YouTube Facade — shows a thumbnail, loads the iframe only on click.
+ * Saves ~800KB of JS per embed by deferring YouTube's player.
+ */
+interface Props {
+  videoId: string;
+  title: string;
+}
+const { videoId, title } = Astro.props;
+const thumbUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+---
+<div class="yt-facade" data-video-id={videoId}>
+  <img src={thumbUrl} alt={title} width="480" height="360" loading="lazy" class="yt-facade-thumb">
+  <button class="yt-facade-play" aria-label={`Play video: ${title}`}>
+    <svg viewBox="0 0 68 48" width="68" height="48" aria-hidden="true">
+      <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/>
+      <path d="M45 24L27 14v20" fill="white"/>
+    </svg>
+  </button>
+</div>
+
+<style>
+  .yt-facade {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #000;
+    cursor: pointer;
+    border-radius: 2px;
+  }
+  .yt-facade-thumb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 110%;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+  }
+  .yt-facade-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0.85;
+    transition: opacity 0.2s, transform 0.2s;
+    padding: 0;
+  }
+  .yt-facade:hover .yt-facade-play {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+  .yt-facade iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+</style>
+
+<script>
+  document.addEventListener('click', (e) => {
+    const facade = (e.target as HTMLElement).closest('.yt-facade');
+    if (!facade || facade.querySelector('iframe')) return;
+    const videoId = facade.getAttribute('data-video-id');
+    if (!videoId) return;
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    iframe.title = facade.querySelector('img')?.alt || '';
+    facade.innerHTML = '';
+    facade.appendChild(iframe);
+  });
+</script>

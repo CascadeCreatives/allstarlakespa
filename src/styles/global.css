@@ -235,8 +235,13 @@ em{font-style:italic;color:var(--sage-dk)}
 /* FOOTER */
 footer{flex-shrink:0;background:var(--char);color:rgba(250,249,247,.62);padding:3.5rem 0 2rem}
 .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.07)}
-.foot-brand h3{font-family:var(--fd);font-size:1.38rem;font-weight:300;color:var(--white);margin-bottom:.7rem}
+.foot-brand h3,.foot-brand-name{font-family:var(--fd);font-size:1.38rem;font-weight:300;color:var(--white);margin-bottom:.2rem}
+.foot-brand-loc{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,249,247,.45);margin-bottom:.8rem}
 .foot-brand p{font-size:.79rem;line-height:1.72;max-width:275px}
+.foot-phone{margin-top:.9rem;font-size:.77rem}
+.foot-phone a{color:var(--sage-lt)}
+.foot-addr{font-size:.7rem;margin-top:.3rem;opacity:.45}
+.foot-btm a{color:var(--sage-lt)}
 .foot-col h4{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sage-lt);margin-bottom:.95rem}
 .foot-col a{display:block;font-size:.79rem;padding:.2rem 0;transition:color .2s}
 .foot-col a:hover{color:var(--white)}
