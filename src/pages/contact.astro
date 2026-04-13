@@ -1,13 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
 ---
 <Layout
   title="Contact & Hours | All Star Massage and Spa | 425.452.1772"
   description="Contact All Star Massage and Spa at 9 Lake Bellevue Drive Suite 112, Bellevue WA. Call 425.452.1772. Mon & Fri 9am-7pm, Tue-Thu 10am-9pm, Sat 9am-9pm.">
-  <Nav slot="nav" />
-  <main class="page" id="page-contact">
+  <main class="page" id="main-content">
 <div class="contact-banner">
     <img src="photos/photo-banner-contact.jpg"
       alt="All Star Massage and Spa on Lake Bellevue Bellevue WA contact location" width="1200" height="250" loading="lazy">
@@ -74,5 +71,4 @@ import Footer from '../components/Footer.astro';
     </div>
   </div>
   </main>
-  <Footer slot="footer" />
 </Layout>

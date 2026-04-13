@@ -1,13 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
 ---
 <Layout
   title="Spa Services Bellevue WA | Massage, Facials & Body Treatments | All Star"
   description="Medical massage, wellness massage, facials, body treatments and spa packages at All Star Massage and Spa on Lake Bellevue. State-licensed. Insurance accepted.">
-  <Nav slot="nav" />
-  <main class="page" id="page-services">
+  <main class="page" id="main-content">
 <div class="svc-banner">
     <img src="photos/photo-banner-services.jpg"
       alt="Massage and spa services All Star Lake Spa Bellevue WA" width="1200" height="300" loading="lazy">
@@ -78,7 +75,7 @@ import Footer from '../components/Footer.astro';
         <h2><em>Body</em><br>Treatments</h2>
         <div class="rule"></div>
         <a href="https://www.secure-booker.com/allstarmassage/MakeAppointment/Search.aspx" target="_blank" class="btn btn-p">Book Now</a>
-        <img class="svc-blk-photo" src="photos/photo-svc-body.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?w=500&auto=format&fit=crop&q=75'" alt="Body treatment spa Bellevue WA Pacific Northwest" width="500" height="185" loading="lazy">
+        <img class="svc-blk-photo" src="https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?w=500&auto=format&fit=crop&q=75" alt="Body treatment spa Bellevue WA Pacific Northwest" width="500" height="185" loading="lazy">
       </div>
       <div class="svc-blk-c">
         <p><!--EDIT:body_desc-->Restorative body treatments that nourish skin deeply, detoxify, and deliver total-body relaxation from head to toe. These immersive experiences complement massage beautifully.<!--/EDIT:body_desc--></p>
@@ -102,5 +99,4 @@ import Footer from '../components/Footer.astro';
     </div>
   </div>
   </main>
-  <Footer slot="footer" />
 </Layout>

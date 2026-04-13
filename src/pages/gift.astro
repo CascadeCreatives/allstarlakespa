@@ -1,13 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
 ---
 <Layout
   title="Spa Gift Certificates Bellevue WA | All Star Massage and Spa"
   description="Give the gift of healing. Instant digital spa gift certificates for All Star Massage and Spa on Lake Bellevue. Any amount, any service, delivered by email.">
-  <Nav slot="nav" />
-  <main class="page" id="page-gift">
+  <main class="page" id="main-content">
 <div class="gift-banner">
     <img src="photos/photo-banner-gift.jpg"
       alt="Spa gift certificate All Star Massage and Spa Bellevue WA" width="1200" height="250" loading="lazy">
@@ -41,5 +38,4 @@ import Footer from '../components/Footer.astro';
     </div>
   </div>
   </main>
-  <Footer slot="footer" />
 </Layout>

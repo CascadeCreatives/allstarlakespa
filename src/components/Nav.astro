@@ -1,13 +1,24 @@
 ---
+interface Props { currentPath?: string; }
+const { currentPath = '/' } = Astro.props;
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/services', label: 'Services' },
+  { href: '/specials', label: 'Specials' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+];
+function isActive(href: string, path: string): boolean {
+  const p = path.replace(/\/$/, '') || '/';
+  return href === p || (href.length > 1 && p.startsWith(href));
+}
 ---
 <nav role="navigation" aria-label="Main navigation">
-  <div class="logo" href="/" tabindex="0" role="button" aria-label="All Star Massage and Spa home" style="display:flex;align-items:center"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 60" width="260" height="60" aria-label="All Star Massage and Spa"> <!-- 5-petal bloom mark --> <path d="M 31.00,24.00 Q 32.10,15.75 26.00,9.00 Q 19.90,15.75 21.00,24.00 Q 26.00,28.00 31.00,24.00 Z" fill="#223328" opacity="0.88"/> <path d="M 31.35,31.52 Q 39.54,30.02 44.07,22.13 Q 35.77,18.41 28.26,22.01 Q 26.00,28.00 31.35,31.52 Z" fill="#223328" opacity="0.88"/> <path d="M 24.31,34.17 Q 28.27,41.50 37.17,43.37 Q 38.14,34.32 32.40,28.30 Q 26.00,28.00 24.31,34.17 Z" fill="#223328" opacity="0.88"/> <path d="M 19.60,28.30 Q 13.86,34.32 14.83,43.37 Q 23.73,41.50 27.69,34.17 Q 26.00,28.00 19.60,28.30 Z" fill="#223328" opacity="0.88"/> <path d="M 23.74,22.01 Q 16.23,18.41 7.93,22.13 Q 12.46,30.02 20.65,31.52 Q 26.00,28.00 23.74,22.01 Z" fill="#223328" opacity="0.88"/> <!-- Center --> <circle cx="26" cy="28" r="4.8" fill="#faf9f7"/> <circle cx="26" cy="28" r="3.2" fill="#b8a060" opacity="0.9"/> <circle cx="26" cy="28" r="1.4" fill="#ede5d0"/> <!-- Thin divider --> <line x1="52" y1="12" x2="52" y2="46" stroke="#223328" stroke-width="0.5" opacity="0.12"/> <!-- Wordmark --> <text x="62" y="28" font-family="Georgia,'Times New Roman',serif" font-size="17" fill="#1e2e24" letter-spacing="3" font-weight="400">ALL STAR</text> <rect x="62" y="32" width="186" height="0.7" fill="#1e2e24" opacity="0.18"/> <text x="62" y="43" font-family="Georgia,serif" font-size="7.5" fill="#1e2e24" letter-spacing="4" opacity="0.62">MASSAGE &amp; SPA</text> <text x="62" y="54" font-family="Georgia,serif" font-size="5.5" fill="#9a8a5a" letter-spacing="2">BELLEVUE · WASHINGTON · EST. 2006</text> </svg> </div>
+  <a href="/" class="logo" aria-label="All Star Massage and Spa — home"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 60" width="260" height="60" aria-label="All Star Massage and Spa"> <path d="M 31.00,24.00 Q 32.10,15.75 26.00,9.00 Q 19.90,15.75 21.00,24.00 Q 26.00,28.00 31.00,24.00 Z" fill="#223328" opacity="0.88"/> <path d="M 31.35,31.52 Q 39.54,30.02 44.07,22.13 Q 35.77,18.41 28.26,22.01 Q 26.00,28.00 31.35,31.52 Z" fill="#223328" opacity="0.88"/> <path d="M 24.31,34.17 Q 28.27,41.50 37.17,43.37 Q 38.14,34.32 32.40,28.30 Q 26.00,28.00 24.31,34.17 Z" fill="#223328" opacity="0.88"/> <path d="M 19.60,28.30 Q 13.86,34.32 14.83,43.37 Q 23.73,41.50 27.69,34.17 Q 26.00,28.00 19.60,28.30 Z" fill="#223328" opacity="0.88"/> <path d="M 23.74,22.01 Q 16.23,18.41 7.93,22.13 Q 12.46,30.02 20.65,31.52 Q 26.00,28.00 23.74,22.01 Z" fill="#223328" opacity="0.88"/> <circle cx="26" cy="28" r="4.8" fill="#faf9f7"/> <circle cx="26" cy="28" r="3.2" fill="#b8a060" opacity="0.9"/> <circle cx="26" cy="28" r="1.4" fill="#ede5d0"/> <line x1="52" y1="12" x2="52" y2="46" stroke="#223328" stroke-width="0.5" opacity="0.12"/> <text x="62" y="28" font-family="Georgia,'Times New Roman',serif" font-size="17" fill="#1e2e24" letter-spacing="3" font-weight="400">ALL STAR</text> <rect x="62" y="32" width="186" height="0.7" fill="#1e2e24" opacity="0.18"/> <text x="62" y="43" font-family="Georgia,serif" font-size="7.5" fill="#1e2e24" letter-spacing="4" opacity="0.62">MASSAGE &amp; SPA</text> <text x="62" y="54" font-family="Georgia,serif" font-size="5.5" fill="#9a8a5a" letter-spacing="2">BELLEVUE · WASHINGTON · EST. 2006</text> </svg> </a>
   <div class="nav-links">
-    <a href="/">Home</a>
-    <a href="/services">Services</a>
-    <a href="/specials">Specials</a>
-    <a href="/about">About</a>
-    <a href="/contact">Contact</a>
+    {navLinks.map(link => (
+      <a href={link.href} class:list={[{ active: isActive(link.href, currentPath) }]}>{link.label}</a>
+    ))}
   </div>
   <div class="nav-ctas">
     <a href="/gift" class="btn btn-o">Gift Cards</a>
@@ -17,12 +28,10 @@
     <span></span><span></span><span></span>
   </button>
 </nav>
-<div class="mob" id="mobMenu">
-  <a  href="/" onclick="toggleMob()">Home</a>
-  <a  href="/services" onclick="toggleMob()">Services</a>
-  <a  href="/specials" onclick="toggleMob()">Specials</a>
-  <a  href="/gift" onclick="toggleMob()">Gift Cards</a>
-  <a  href="/about" onclick="toggleMob()">About</a>
-  <a  href="/contact" onclick="toggleMob()">Contact</a>
-  <a href="https://www.secure-booker.com/allstarmassage/MakeAppointment/Search.aspx" target="_blank" class="btn btn-p">Book Now</a>
+<div class="mob" id="mobMenu" aria-hidden="true">
+  {navLinks.map(link => (
+    <a href={link.href} class:list={[{ active: isActive(link.href, currentPath) }]}>{link.label}</a>
+  ))}
+  <a href="/gift">Gift Cards</a>
+  <a href="https://www.secure-booker.com/allstarmassage/MakeAppointment/Search.aspx" target="_blank" rel="noopener" class="btn btn-p">Book Now</a>
 </div>

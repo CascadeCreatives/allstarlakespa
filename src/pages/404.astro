@@ -1,11 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
 ---
 <Layout title="Page Not Found | All Star Massage and Spa">
-  <Nav slot="nav" />
-  <main class="page" style="display:flex;align-items:center;justify-content:center;min-height:60vh;text-align:center">
+  <main class="page" id="main-content" style="display:flex;align-items:center;justify-content:center;min-height:60vh;text-align:center">
     <div>
       <p class="lbl">404 — Page Not Found</p>
       <h1 class="h2" style="margin:1rem 0">This page has moved<br>or doesn't exist</h1>
@@ -17,5 +14,4 @@ import Footer from '../components/Footer.astro';
       </div>
     </div>
   </main>
-  <Footer slot="footer" />
 </Layout>

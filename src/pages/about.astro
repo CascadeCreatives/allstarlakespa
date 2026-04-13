@@ -1,13 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
 ---
 <Layout
   title="About Us | All Star Massage and Spa Bellevue WA | Est. 2006"
   description="Meet Starla Schwartz, LMP and our team of state-licensed massage therapists and estheticians at All Star Massage and Spa on Lake Bellevue. Est. 2006.">
-  <Nav slot="nav" />
-  <main class="page" id="page-about">
+  <main class="page" id="main-content">
 <div class="about-banner">
     <img src="photos/photo-banner-about.jpg"
       alt="All Star Massage and Spa Bellevue WA lakeside healing retreat" width="1200" height="320" loading="lazy">
@@ -21,14 +18,14 @@ import Footer from '../components/Footer.astro';
   <div class="c about-story">
     <div>
       <span class="lbl">Starla Schwartz, LMP · Founder &amp; Spa Director</span>
-      <h2 class="h2">18 years of care<br>on <em>Lake Bellevue</em></h2>
+      <h2 class="h2">20 years of care<br>on <em>Lake Bellevue</em></h2>
       <div class="rule"></div>
       <p>All Star Massage and Spa was founded on one belief: everyone deserves a place to truly heal, restore, and feel their very best. Since 2006, our team has brought that belief to life on the shores of Lake Bellevue — one session at a time.</p>
       <blockquote>"Whether you seek a program of medical healing, a day of indulgence, or both kinds of care, we are the only spa for you."</blockquote>
       <p>Starla Schwartz is a Licensed Massage Practitioner with a background in skincare, accredited at Bellevue Massage School. Her passion for making others look and feel their best led her to build a multi-therapist team of state-licensed professionals committed to whole-body wellness.</p>
       <p>The team gives back to the community — donating regularly to women in need. Many of our therapists have been with us for over a decade, a testament to the culture Starla has built.</p>
       <div class="stats-row">
-        <div class="stat"><strong>18+</strong><span>Years in Bellevue</span></div>
+        <div class="stat"><strong>20</strong><span>Years in Bellevue</span></div>
         <div class="stat"><strong>4.1★</strong><span>Average Rating</span></div>
         <div class="stat"><strong>136+</strong><span>Guest Reviews</span></div>
       </div>
@@ -121,5 +118,4 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
   </main>
-  <Footer slot="footer" />
 </Layout>

@@ -1,11 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
 ---
 <Layout title="Massage Bellevue WA | All Star Massage and Spa | Lake Bellevue">
-  <Nav slot="nav" />
-  <main class="page" id="page-home">
+  <main class="page" id="main-content">
 <section class="hero" aria-label="Welcome">
     <div class="hero-l">
       <p class="hero-ey">Bellevue's Lakeside Healing Sanctuary · Est. 2006</p>
@@ -22,8 +19,8 @@ import Footer from '../components/Footer.astro';
       <img src="photos/photo-hero.jpg"
         alt="Serene spa treatment room at All Star Massage and Spa on Lake Bellevue, Bellevue WA"
         width="900" height="700" loading="eager" fetchpriority="high">
-      <div class="hero-badge" aria-label="25 plus years healing Bellevue">
-        <strong>18+</strong><span>Years healing Bellevue</span>
+      <div class="hero-badge" aria-label="20 years healing Bellevue">
+        <strong>20</strong><span>Years healing Bellevue</span>
       </div>
     </div>
   </section>
@@ -33,7 +30,7 @@ import Footer from '../components/Footer.astro';
       <span>✦ Medical Massage</span><span class="td">|</span>
       <span>✦ Insurance Accepted</span><span class="td">|</span>
       <span>✦ On Lake Bellevue</span><span class="td">|</span>
-      <span>✦ 18+ Years in Bellevue</span><span class="td">|</span>
+      <span>✦ 20 Years in Bellevue</span><span class="td">|</span>
       <span>✦ Mon &amp; Fri 9–7 · Tue–Thu 10–9 · Sat 9–9</span><span class="td">|</span>
       <a href="tel:4254521772" style="color:inherit">✦ 425.452.1772</a>
     </div>
@@ -70,42 +67,42 @@ import Footer from '../components/Footer.astro';
       <p class="body-s" style="max-width:500px">Every treatment is customized by our state-licensed therapists and estheticians. Whether you're healing, recovering, or restoring — we have a path for you.</p>
     </div>
     <div class="svc-grid" role="list">
-      <article class="svc-c" role="listitem" href="/services" tabindex="0">
+      <a href="/services" class="svc-c" role="listitem">
         <img src="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?w=600&auto=format&fit=crop&q=75" alt="Medical massage therapy pain relief Bellevue WA" width="600" height="155" loading="lazy">
         <h3>Medical Massage</h3>
         <p>Insurance-billed therapeutic massage for pain relief and rehabilitation. In-network with Regence, Premera, BCBS, Aetna, United Healthcare, Kaiser, and more.</p>
         <span class="svc-lnk">Learn more →</span>
-      </article>
-      <article class="svc-c" role="listitem" href="/services" tabindex="0">
+      </a>
+      <a href="/services" class="svc-c" role="listitem">
         <img src="photos/photo-svc-wellness.jpg" alt="Wellness massage Bellevue WA spa" width="600" height="155" loading="lazy">
         <h3>Wellness &amp; Spa Massage</h3>
         <p>Hot stone, deep tissue, Swedish, sports, prenatal — our most popular treatments melt stress and renew your body, mind, and spirit.</p>
         <span class="svc-lnk">Learn more →</span>
-      </article>
-      <article class="svc-c" role="listitem" href="/services" tabindex="0">
+      </a>
+      <a href="/services" class="svc-c" role="listitem">
         <img src="photos/photo-strip-1.jpg" alt="Facial skin care treatment Bellevue WA esthetician" width="600" height="155" loading="lazy">
         <h3>Facials &amp; Skin Care</h3>
         <p>Personalized facials including our signature European Facial. Expert skin care treatments tailored to your skin type. Glow from the inside out.</p>
         <span class="svc-lnk">Learn more →</span>
-      </article>
-      <article class="svc-c" role="listitem" href="/services" tabindex="0">
-        <img src="photos/photo-svc-body.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?w=600&auto=format&fit=crop&q=75'" alt="Body treatment spa Bellevue WA Pacific Northwest" width="600" height="155" loading="lazy">
+      </a>
+      <a href="/services" class="svc-c" role="listitem">
+        <img src="https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?w=600&auto=format&fit=crop&q=75" alt="Body treatment spa Bellevue WA Pacific Northwest" width="600" height="155" loading="lazy">
         <h3>Body Treatments</h3>
         <p>Restorative body wraps, mud treatments, and exfoliating scrubs using M'Lis products. Head-to-toe detox and nourishment.</p>
         <span class="svc-lnk">Learn more →</span>
-      </article>
-      <article class="svc-c" role="listitem" href="/services" tabindex="0">
+      </a>
+      <a href="/services" class="svc-c" role="listitem">
         <img src="photos/photo-svc-packages.jpg" alt="Starlight spa package Lake Bellevue" width="600" height="155" style="object-position:center top" loading="lazy">
         <h3>Starlight Spa Packages</h3>
         <p>Curated multi-treatment packages — massage, facial, body care combined. Perfect for birthdays, anniversaries, or a full restorative day on the lake.</p>
         <span class="svc-lnk">Learn more →</span>
-      </article>
-      <article class="svc-c" role="listitem" href="/specials" tabindex="0">
+      </a>
+      <a href="/specials" class="svc-c" role="listitem">
         <img src="photos/photo-svc-specials.jpg" alt="Spa day special Bellevue WA monthly offer" width="600" height="155" loading="lazy">
         <h3>Monthly Specials</h3>
         <p>This month: <strong>Take a Spa Day</strong> — foot soak, paraffin dip, facial, scalp massage, beverage and snack. Just $99. A new offer every month.</p>
         <span class="svc-lnk">View this month's specials →</span>
-      </article>
+      </a>
     </div>
   </section>
 
@@ -130,20 +127,20 @@ import Footer from '../components/Footer.astro';
       <div class="rule rc"></div>
       <div class="rev-grid">
         <article class="rev-c">
-          <div class="rev-stars">★★★★★</div>
+          <div class="rev-stars" aria-label="5 out of 5 stars" role="img">★★★★★</div>
           <p class="rev-text">I've been going here for massages with Starla for the last six months and continue to be impressed. The waiting room is delightful — sit back, have a cup of tea, and look at the beautiful lake while you wait.</p>
           <p class="rev-by">— Verified Guest · Yelp</p>
-        </article>
+        </a>
         <article class="rev-c">
-          <div class="rev-stars">★★★★★</div>
+          <div class="rev-stars" aria-label="5 out of 5 stars" role="img">★★★★★</div>
           <p class="rev-text">I couldn't stand up without constant pain and one visit brought instant pain relief. I was so relieved all I could do was cry. I consider this one of the most important things I do to maintain my health and lifestyle.</p>
           <p class="rev-by">— Verified Guest · Google</p>
-        </article>
+        </a>
         <article class="rev-c">
-          <div class="rev-stars">★★★★★</div>
+          <div class="rev-stars" aria-label="5 out of 5 stars" role="img">★★★★★</div>
           <p class="rev-text">It says a lot about a business when they have employees for over 20 years. My therapist listened carefully and made sure the pressure was right. I left feeling amazing — already looking forward to going back.</p>
           <p class="rev-by">— Verified Guest · Google</p>
-        </article>
+        </a>
       </div>
       <p style="text-align:center;margin-top:1.75rem;font-size:.77rem;color:var(--stone)">4.1 ★ average · 136+ reviews on Yelp &amp; Google</p>
     </div>
@@ -233,5 +230,4 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
   </main>
-  <Footer slot="footer" />
 </Layout>

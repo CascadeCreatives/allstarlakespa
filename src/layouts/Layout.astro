@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
 
 interface Props {
   title?: string;
@@ -10,6 +12,8 @@ const {
   title = "Massage Bellevue WA | All Star Massage and Spa | Lake Bellevue",
   description = "All Star Massage and Spa — Bellevue's premier lakeside massage and spa. Medical massage, deep tissue, hot stone, facials & body treatments on Lake Bellevue. Insurance accepted. Call 425.452.1772."
 } = Astro.props;
+
+const currentPath = Astro.url.pathname;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -61,35 +65,42 @@ const {
 }`} />
 </head>
 <body>
-<slot name="nav" />
+<a href="#main-content" class="skip-link">Skip to content</a>
+<Nav currentPath={currentPath} />
 <slot />
-<slot name="footer" />
+<Footer />
 <script is:inline>
-
 function toggleMob() {
   const m = document.getElementById('mobMenu');
   if (!m) return;
   const open = m.classList.toggle('open');
+  m.setAttribute('aria-hidden', String(!open));
   const btn = document.querySelector('.ham');
   if (btn) btn.setAttribute('aria-expanded', String(open));
 }
 document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('click', (e) => {
     const m = document.getElementById('mobMenu');
-    if (!m) return;
-    if (!m.contains(e.target) && !e.target.closest('.ham')) m.classList.remove('open');
+    if (!m || !m.classList.contains('open')) return;
+    if (!m.contains(e.target) && !e.target.closest('.ham')) {
+      m.classList.remove('open');
+      m.setAttribute('aria-hidden', 'true');
+      document.querySelector('.ham')?.setAttribute('aria-expanded', 'false');
+    }
   });
-  const path = window.location.pathname.replace(/\/$/, '') || '/';
-  document.querySelectorAll('.nav-links a, .mob a').forEach(a => {
-    const href = (a.getAttribute('href') || '').replace(/\/$/, '');
-    if (href === path || (path === '/' && href === '/') || (href.length > 1 && path.startsWith(href))) {
-      a.classList.add('active');
-    } else {
-      a.classList.remove('active');
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const m = document.getElementById('mobMenu');
+      if (m?.classList.contains('open')) {
+        m.classList.remove('open');
+        m.setAttribute('aria-hidden', 'true');
+        const btn = document.querySelector('.ham');
+        btn?.setAttribute('aria-expanded', 'false');
+        btn?.focus();
+      }
     }
   });
 });
-
 </script>
 </body>
 </html>
