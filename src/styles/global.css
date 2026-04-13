@@ -109,7 +109,7 @@ em{font-style:italic;color:var(--sage-dk)}
 .ins-note{font-size:.74rem;color:var(--stone);margin-top:.9rem;line-height:1.6}
 
 .lake{background:linear-gradient(135deg,var(--sage-dk) 0%,#2e4a30 100%);color:var(--white);overflow:hidden;position:relative}
-.lake::before{content:'Lake Bellevue';position:absolute;right:-3rem;top:50%;transform:translateY(-50%);font-family:var(--fd);font-size:9rem;font-weight:300;color:rgba(255,255,255,.05);white-space:nowrap;pointer-events:none;font-style:italic}
+
 .lake-in{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center;padding:5.5rem 0;position:relative}
 .lake-in h2{font-family:var(--fd);font-size:2.8rem;font-weight:300;line-height:1.15;margin-bottom:1rem;color:white}
 .lake-in p{opacity:.82;font-size:.87rem;line-height:1.85;margin-bottom:2rem}
@@ -270,7 +270,6 @@ footer{flex-shrink:0;background:var(--char);color:rgba(250,249,247,.62);padding:
   .rev-grid{grid-template-columns:1fr}
   .ins-in{grid-template-columns:1fr;gap:2.5rem}
   .lake-in{grid-template-columns:1fr;gap:2.5rem;padding:3.5rem 0}
-  .lake::before{display:none}
   .faq-grid{grid-template-columns:1fr}
   .svc-blk{grid-template-columns:1fr;gap:1.5rem}
   .sp-grid{grid-template-columns:1fr}
