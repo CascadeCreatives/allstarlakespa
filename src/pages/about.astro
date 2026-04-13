@@ -24,10 +24,10 @@ import YouTube from '../components/YouTube.astro';
         <div class="stat"><strong>4.1★</strong><span>Average Rating</span></div>
         <div class="stat"><strong>136+</strong><span>Guest Reviews</span></div>
       </div>
-      <div style="margin-top:2rem;padding-top:1.75rem;border-top:1px solid var(--stone-lt)">
-        <span class="lbl" style="margin-bottom:.5rem;display:block">Call Us</span>
-        <a href="tel:4254521772" style="font-family:var(--fd);font-size:2.4rem;font-weight:600;color:var(--sage-dk);letter-spacing:.02em;text-decoration:none;line-height:1">425.452.1772</a>
-        <p style="margin-top:.5rem;font-size:.78rem;color:var(--stone);letter-spacing:.07em;text-transform:uppercase">Mon &amp; Fri 9am–7pm &nbsp;·&nbsp; Tue–Thu 10am–9pm &nbsp;·&nbsp; Sat 9am–9pm</p>
+      <div class="about-cta-block">
+        <span class="lbl">Call Us</span>
+        <a href="tel:4254521772" class="about-phone">425.452.1772</a>
+        <p class="about-hours">Mon &amp; Fri 9am–7pm &nbsp;·&nbsp; Tue–Thu 10am–9pm &nbsp;·&nbsp; Sat 9am–9pm</p>
       </div>
     </div>
     <img src="photos/photo-about-story.jpg"
@@ -38,24 +38,24 @@ import YouTube from '../components/YouTube.astro';
       <span class="lbl">Our Team</span>
       <h2 class="h2">Meet the <em>therapists</em></h2>
       <div class="rule"></div>
-      <p class="body-s" style="max-width:560px">State-licensed professionals who bring years of expertise and genuine care to every treatment. Each therapist customizes your session to your individual needs.</p>
+      <p class="body-s about-team-intro">State-licensed professionals who bring years of expertise and genuine care to every treatment. Each therapist customizes your session to your individual needs.</p>
 
       <!-- VIDEO -->
-      <div style="margin:3rem 0">
+      <div class="about-video-wrap">
         <YouTube videoId="KuCFONKxQ9M" title="All Star Massage and Spa — Bellevue, WA" />
       </div>
 
       <div class="staff-grid">
         <div class="staff-c">
-          <img src="photos/photo-staff-starla.jpg" alt="Starla Schwartz LMP — Spa Director, All Star Massage and Spa Bellevue WA" style="width:100%;height:240px;object-fit:cover;object-position:center 30%">
+          <img src="photos/photo-staff-starla.jpg" alt="Starla Schwartz LMP — Spa Director, All Star Massage and Spa Bellevue WA" class="staff-photo">
           <div class="staff-info">
             <h3>Starla Schwartz</h3>
             <span class="st-title">LMP · Spa Director &amp; Founder</span>
-            <p>Licensed since 2006. Specializes in wellness massage, medical massage, and skincare. Accredited at Bellevue Massage School. One of the most sought-after therapists on the Eastside.</p>
+            <p>Licensed since 1999. Specializes in wellness massage, medical massage, and skincare. Accredited at Bellevue Massage School. One of the most sought-after therapists on the Eastside.</p>
           </div>
         </div>
         <div class="staff-c">
-          <img src="photos/photo-staff-cheryl.jpg" alt="Cheryl Allison LMP — Massage Practitioner, All Star Massage and Spa Bellevue WA" style="width:100%;height:240px;object-fit:cover;object-position:center 20%">
+          <img src="photos/photo-staff-cheryl.jpg" alt="Cheryl Allison LMP — Massage Practitioner, All Star Massage and Spa Bellevue WA" class="staff-photo">
           <div class="staff-info">
             <h3>Cheryl Allison</h3>
             <span class="st-title">LMP · Massage Practitioner</span>
@@ -63,7 +63,7 @@ import YouTube from '../components/YouTube.astro';
           </div>
         </div>
         <div class="staff-c">
-          <img src="photos/photo-staff-james.jpg" alt="James Schmidt LMT — Licensed Massage Therapist, All Star Massage and Spa Bellevue WA" style="width:100%;height:240px;object-fit:cover;object-position:center 20%">
+          <img src="photos/photo-staff-james.jpg" alt="James Schmidt LMT — Licensed Massage Therapist, All Star Massage and Spa Bellevue WA" class="staff-photo">
           <div class="staff-info">
             <h3>James Schmidt</h3>
             <span class="st-title">LMT · Licensed Massage Therapist</span>
@@ -71,7 +71,7 @@ import YouTube from '../components/YouTube.astro';
           </div>
         </div>
         <div class="staff-c">
-          <img src="photos/photo-staff-monica.jpg" alt="Monica Tooley LMT — Licensed Massage Therapist, All Star Massage and Spa Bellevue WA" style="width:100%;height:240px;object-fit:cover;object-position:center 20%">
+          <img src="photos/photo-staff-monica.jpg" alt="Monica Tooley LMT — Licensed Massage Therapist, All Star Massage and Spa Bellevue WA" class="staff-photo">
           <div class="staff-info">
             <h3>Monica Tooley</h3>
             <span class="st-title">LMT · Licensed Massage Therapist</span>
@@ -79,11 +79,19 @@ import YouTube from '../components/YouTube.astro';
           </div>
         </div>
         <div class="staff-c">
-          <img src="photos/photo-staff-gabriel.jpg" alt="Gabriel Garrett-Singh LMT — Licensed Massage Therapist, All Star Massage and Spa Bellevue WA" style="width:100%;height:240px;object-fit:contain;object-position:center center;background:#f0ede8">
+          <img src="photos/photo-staff-gabriel.jpg" alt="Gabriel Garrett-Singh LMT — Licensed Massage Therapist, All Star Massage and Spa Bellevue WA" class="staff-photo staff-photo--contain">
           <div class="staff-info">
             <h3>Gabriel Garrett-Singh</h3>
             <span class="st-title">LMT · Licensed Massage Therapist</span>
             <p>Joined our spa in 2024 with four years of experience from Care A Lot Health Spa, Massage Envy, and Elements. Known for his calm, caring presence and excellent deep tissue work. Guests consistently leave feeling at ease.</p>
+          </div>
+        </div>
+        <div class="staff-c">
+          <div class="staff-init">Ly</div>
+          <div class="staff-info">
+            <h3>Liying Zhang</h3>
+            <span class="st-title">LMT · Licensed Massage Therapist</span>
+            <p>Years of hands-on experience specializing in cupping therapy and deep tissue massage. Fluent in Mandarin and English, Liying brings a thoughtful, culturally attentive approach to every session. Accepts most insurance plans.</p>
           </div>
         </div>
         <div class="staff-c">
