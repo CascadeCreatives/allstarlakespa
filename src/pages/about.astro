@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Banner from '../components/Banner.astro';
 import YouTube from '../components/YouTube.astro';
+import { address, addressOneLine, permanentAddress, relocation, mapsLink } from '../data/location';
 ---
 <Layout
   title="About Us | All Star Massage and Spa Bellevue WA | Est. 2006"
@@ -10,6 +11,24 @@ import YouTube from '../components/YouTube.astro';
 <Banner image="/photos/photo-banner-about.jpg" imageAlt="All Star Massage and Spa Bellevue WA lakeside healing retreat" label="Our Story" height="320px">
     <h1 class="h1" style="color:white">Where healing<br>found its <em style="color:var(--sage-lt)">home</em></h1>
   </Banner>
+
+  {relocation.active && (
+  <div class="c">
+    <aside class="relo-slim" aria-label="Temporary location notice">
+      <span class="relo-tag">Important update</span>
+      <p>
+        Following the recent fire at our {permanentAddress.building} location, we&rsquo;re temporarily
+        at <strong>{address.building}</strong> &mdash; {addressOneLine} &mdash;
+        reopening <strong>{relocation.reopenLabel}</strong>. Same team, same phone.
+      </p>
+      <p class="relo-slim-links">
+        <a href="/contact">Directions &amp; photos &rarr;</a>
+        <a href={mapsLink} target="_blank" rel="noopener">Open in Google Maps &rarr;</a>
+      </p>
+    </aside>
+  </div>
+  )}
+
   <div class="c about-story">
     <div>
       <span class="lbl">Starla Schwartz, LMP · Founder &amp; Spa Director</span>
