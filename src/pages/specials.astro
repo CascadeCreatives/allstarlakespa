@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { address, addressDot, relocation } from '../data/location';
 import Banner from '../components/Banner.astro';
 import InsuranceBadges from '../components/InsuranceBadges.astro';
 ---
@@ -7,7 +8,7 @@ import InsuranceBadges from '../components/InsuranceBadges.astro';
   title="April Spa Specials Bellevue WA | $99 Spa Day | All Star Massage"
   description="This month's spa special: Take a Spa Day for $99 — foot soak, paraffin dip, facial, scalp massage, beverage & snack. All Star Massage and Spa on Lake Bellevue, Bellevue WA. Book now.">
   <main class="page" id="main-content">
-  <Banner image="photos/photo-banner-specials.jpg" imageAlt="Spa facial treatment at All Star Massage and Spa — monthly specials Bellevue WA" label="Limited Offer · Bellevue, WA" height="320px">
+  <Banner image="/photos/photo-banner-specials.jpg" imageAlt="Spa facial treatment at All Star Massage and Spa — monthly specials Bellevue WA" label="Limited Offer · Bellevue, WA" height="320px">
     <h1 class="h1" style="color:white">This month at<br><em style="color:var(--sage-lt)">the lake</em></h1>
   </Banner>
 
@@ -102,7 +103,7 @@ import InsuranceBadges from '../components/InsuranceBadges.astro';
       </div>
       <a href="tel:4254521772" class="sp-bottom-phone">425.452.1772</a>
       <p class="sp-bottom-hours">Mon &amp; Fri 9am–7pm · Tue–Thu 10am–9pm · Sat 9am–9pm</p>
-      <p class="sp-bottom-addr">9 Lake Bellevue Drive, Suite 112 · Bellevue, WA 98005<br>Serving Bellevue, Kirkland, Redmond, Issaquah, Mercer Island &amp; the Eastside</p>
+      <p class="sp-bottom-addr">{relocation.active && <>Temporarily at {address.building} · </>}{addressDot}<br>Serving Bellevue, Kirkland, Redmond, Issaquah, Mercer Island &amp; the Eastside</p>
     </div>
   </section>
   </main>

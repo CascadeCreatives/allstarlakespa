@@ -1,4 +1,5 @@
 ---
+import { address, permanentAddress, relocation, phone } from '../data/location';
 ---
 <footer>
   <div class="c">
@@ -8,7 +9,7 @@
         <p class="foot-brand-loc">Bellevue · Washington · Est. 2006</p>
         <p>Bellevue's premier lakeside massage and spa. Medical massage, wellness therapies, facials and body treatments. State-licensed. Insurance accepted. Est. 2006.</p>
         <p class="foot-phone"><a href="tel:4254521772">425.452.1772</a></p>
-        <p class="foot-addr">9 Lake Bellevue Drive, Suite 112<br>Bellevue, WA 98005</p>
+        <p class="foot-addr">{relocation.active && <span class="foot-temp">Temporarily at {address.building}</span>}{address.streetWithSuite}<br>{address.city}, {address.region} {address.postal}</p>
       </div>
       <div class="foot-col">
         <h4>Services</h4>
@@ -30,7 +31,7 @@
       </div>
     </div>
     <div class="foot-btm">
-      <p>&copy; 2026 All Star Massage and Spa &middot; 9 Lake Bellevue Drive Suite 112 &middot; Bellevue, WA 98005 &middot; <a href="tel:4254521772">425.452.1772</a></p>
+      <p>&copy; 2026 All Star Massage and Spa &middot; {relocation.active && <>Temporarily at </>}{address.streetWithSuite} &middot; {address.city}, {address.region} {address.postal} &middot; <a href={`tel:${phone.tel}`}>{phone.display}</a></p>
       <p><a href="/privacy">Privacy Policy</a> &middot; Massage Bellevue WA &middot; Medical Massage &middot; Deep Tissue &middot; Hot Stone &middot; Facials</p>
     </div>
   </div>

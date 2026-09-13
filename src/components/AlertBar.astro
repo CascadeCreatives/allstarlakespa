@@ -1,0 +1,19 @@
+---
+import { address, relocation } from '../data/location';
+---
+{relocation.active && (
+  <div class="alert-bar" id="alertBar" role="region" aria-label="Temporary location notice">
+    <a class="alert-inner" href="/contact">
+      <span class="alert-badge">Temporary Location</span>
+      <span class="alert-txt">
+        <strong
+          id="alertLede"
+          data-before={`Reopening ${relocation.reopenShort}`}
+          data-after="Now open"
+          data-open={relocation.reopenDate}
+        >Reopening {relocation.reopenShort}</strong> at {address.building}<span class="alert-sep"> &mdash; </span><span class="alert-addr">{address.streetWithSuite}, {address.city}</span>
+      </span>
+      <span class="alert-cta">Details &rarr;</span>
+    </a>
+  </div>
+)}

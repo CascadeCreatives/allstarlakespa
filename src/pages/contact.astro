@@ -2,53 +2,125 @@
 import Layout from '../layouts/Layout.astro';
 import Banner from '../components/Banner.astro';
 import InsuranceBadges from '../components/InsuranceBadges.astro';
+import { address, addressOneLine, permanentAddress, relocation, mapsLink, mapsEmbed, phone } from '../data/location';
 ---
 <Layout
-  title="Contact & Hours | All Star Massage and Spa | 425.452.1772"
-  description="Contact All Star Massage and Spa at 9 Lake Bellevue Drive Suite 112, Bellevue WA. Call 425.452.1772. Mon & Fri 9am-7pm, Tue-Thu 10am-9pm, Sat 9am-9pm.">
+  title={relocation.active
+    ? `Contact & Hours | All Star Massage and Spa | Temporarily at ${address.building}, Bellevue`
+    : "Contact & Hours | All Star Massage and Spa | 425.452.1772"}
+  description={relocation.active
+    ? `All Star Massage and Spa is temporarily located at ${addressOneLine} (${address.building}), reopening ${relocation.reopenLabel}. Call ${phone.display}. Mon & Fri 9am-7pm, Tue-Thu 10am-9pm, Sat 9am-9pm.`
+    : `Contact All Star Massage and Spa at ${addressOneLine}. Call ${phone.display}. Mon & Fri 9am-7pm, Tue-Thu 10am-9pm, Sat 9am-9pm.`}>
   <main class="page" id="main-content">
-<Banner image="photos/photo-banner-contact.jpg" imageAlt="All Star Massage and Spa on Lake Bellevue Bellevue WA contact location" label="Come find us" height="250px">
-    <h1 class="h1" style="color:white">Visit us on<br><em style="color:var(--sage-lt)">Lake Bellevue</em></h1>
+<Banner
+    image={relocation.active ? "/photos/photo-bellewood-banner.jpg" : "/photos/photo-banner-contact.jpg"}
+    imageAlt={relocation.active
+      ? "Bellewood Place office building at 2025 112th Ave NE, Bellevue WA — temporary home of All Star Massage and Spa"
+      : "All Star Massage and Spa on Lake Bellevue, Bellevue WA contact location"}
+    label="Come find us" height="250px">
+    {relocation.active
+      ? <h1 class="h1" style="color:white">Temporarily at<br><em style="color:var(--sage-lt)">{address.building}</em></h1>
+      : <h1 class="h1" style="color:white">Visit us on<br><em style="color:var(--sage-lt)">Lake Bellevue</em></h1>}
   </Banner>
+
+  {relocation.active && (
+  <div class="c">
+   <div class="relo-wrap">
+    <section class="relo" aria-labelledby="relo-h">
+      <div class="relo-txt">
+        <span class="relo-tag">Important update</span>
+        <h2 id="relo-h" class="h2">We&rsquo;ve moved &mdash; <em>temporarily</em></h2>
+        <p class="relo-lede">
+          Following the recent fire at our {permanentAddress.building} location, we are temporarily
+          relocating to the beautiful {address.building} office. <strong>We reopen {relocation.reopenLabel}.</strong>
+        </p>
+        <div class="relo-addr">
+          <span class="ci-lbl">Temporary address</span>
+          <p><strong>{address.streetWithSuite}</strong><br>{address.city}, {address.region} {address.postal}</p>
+          <a href={mapsLink} target="_blank" rel="noopener" class="ci-map-link">Open in Google Maps &rarr;</a>
+        </div>
+        <p class="relo-note">
+          Same team, same phone, same appointments &mdash; call <a href={`tel:${phone.tel}`}>{phone.display}</a> with
+          any questions about an existing booking. Thank you for your patience and continued support
+          during this unexpected transition.
+        </p>
+        <div class="cta-btns">
+          <a href="https://www.secure-booker.com/allstarmassage/MakeAppointment/Search.aspx" target="_blank" rel="noopener" class="btn btn-p">Book an Appointment &rarr;</a>
+        </div>
+      </div>
+      <figure class="relo-fig">
+        <img src="/photos/photo-bellewood-entrance.jpg"
+          alt={`Wood double doors at the entrance to Bellewood Two, ${address.streetWithSuite}, ${address.city} ${address.region} — temporary home of All Star Massage and Spa`}
+          width="1000" height="667" loading="eager">
+        <figcaption>Come in through the <strong>wood double doors</strong> &mdash; we&rsquo;re in Suite 100.</figcaption>
+      </figure>
+    </section>
+
+    <section class="relo-gal" aria-label="Photos of our temporary location">
+      <figure>
+        <img src="/photos/photo-bellewood-place.jpg"
+          alt={`Bellewood Two sign at ${address.street}, ${address.city} ${address.region}`}
+          width="1000" height="650" loading="lazy">
+        <figcaption>Turn in at the <strong>Bellewood Two</strong> sign &mdash; {address.street}.</figcaption>
+      </figure>
+      <figure>
+        <img src="/photos/photo-bellewood-building.jpg"
+          alt={`The Bellewood Place office building at ${address.street}, Bellevue WA`}
+          width="1000" height="667" loading="lazy">
+        <figcaption>A quiet, wooded office park minutes from downtown Bellevue.</figcaption>
+      </figure>
+      <figure>
+        <img src="/photos/photo-bellewood-parking.jpg"
+          alt="Free on-site parking lot at Bellewood Place, Bellevue WA, with accessible stalls"
+          width="1000" height="500" loading="lazy">
+        <figcaption>Free on-site parking, including accessible stalls.</figcaption>
+      </figure>
+    </section>
+   </div>
+  </div>
+  )}
+
   <div class="c contact-grid">
     <div class="ci">
       <div>
         <span class="ci-lbl">Phone</span>
-        <div class="ci-big"><a href="tel:4254521772">425.452.1772</a></div>
+        <div class="ci-big"><a href={`tel:${phone.tel}`}>{phone.display}</a></div>
         <p class="ci-note">Appointments encouraged. Walk-ins welcome when available.</p>
       </div>
       <div>
-        <span class="ci-lbl">Address</span>
-        <p><strong>9 Lake Bellevue Drive, Suite 112</strong><br>Bellevue, WA 98005</p>
-        <a href="https://maps.google.com/?q=9+Lake+Bellevue+Drive+Suite+112+Bellevue+WA+98005" target="_blank" rel="noopener" class="ci-map-link">Open in Google Maps →</a>
+        <span class="ci-lbl">{relocation.active ? 'Temporary address' : 'Address'}</span>
+        <p><strong>{address.streetWithSuite}</strong><br>{address.city}, {address.region} {address.postal}</p>
+        {relocation.active && <p class="ci-note">{address.building} &middot; temporary location while our {permanentAddress.building} space is restored.</p>}
+        <a href={mapsLink} target="_blank" rel="noopener" class="ci-map-link">Open in Google Maps &rarr;</a>
       </div>
       <div>
         <span class="ci-lbl">Hours</span>
-        <p>Mon &amp; Fri: 9:00 am – 7:00 pm<br>Tue / Wed / Thu: 10:00 am – 9:00 pm<br>Saturday: 9:00 am – 9:00 pm<br>Sunday: Closed</p>
+        <p>Mon &amp; Fri: 9:00 am &ndash; 7:00 pm<br>Tue / Wed / Thu: 10:00 am &ndash; 9:00 pm<br>Saturday: 9:00 am &ndash; 9:00 pm<br>Sunday: Closed</p>
+        {relocation.active && <p class="ci-note">Please call {phone.display} to confirm hours at our temporary location.</p>}
       </div>
       <div>
         <span class="ci-lbl">Parking &amp; Access</span>
-        <p>Free private lot parking. Easy access from I-405 and SR-520. Located in the Lake Bellevue professional complex, minutes from downtown Bellevue.</p>
+        <p>{address.parking}</p>
       </div>
       <div class="cta-box">
         <h3>Ready to book?</h3>
         <p>Schedule online anytime or call during business hours. We'll always do our best to accommodate you.</p>
         <div class="cta-btns">
-          <a href="https://www.secure-booker.com/allstarmassage/MakeAppointment/Search.aspx" target="_blank" class="btn btn-w">Book Online →</a>
-          <a href="https://allstarlakespa.boomtime.com/lgift" target="_blank" class="btn btn-g">Gift Certificates →</a>
+          <a href="https://www.secure-booker.com/allstarmassage/MakeAppointment/Search.aspx" target="_blank" class="btn btn-w">Book Online &rarr;</a>
+          <a href="https://allstarlakespa.boomtime.com/lgift" target="_blank" class="btn btn-g">Gift Certificates &rarr;</a>
         </div>
       </div>
     </div>
     <div>
       <div class="map-w">
         <iframe
-          title="All Star Massage and Spa — 9 Lake Bellevue Drive Suite 112 Bellevue WA 98005"
+          title={`All Star Massage and Spa — ${addressOneLine}`}
           loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.882!2d-122.18752!3d47.59802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906c9a2abb8c01%3A0x0!2s9+Lake+Bellevue+Dr+%23112%2C+Bellevue%2C+WA+98005!5e0!3m2!1sen!2sus!4v1700000000000">
+          src={mapsEmbed}>
         </iframe>
       </div>
       <div class="ins-box2">
-        <span class="lbl">Insurance &amp; Billing · Medical Massage Bellevue</span>
+        <span class="lbl">Insurance &amp; Billing &middot; Medical Massage Bellevue</span>
         <h3>Covered by most<br><em>major insurance plans</em></h3>
         <InsuranceBadges />
       </div>
