@@ -4,6 +4,7 @@ import Nav from '../components/Nav.astro';
 import AlertBar from '../components/AlertBar.astro';
 import Footer from '../components/Footer.astro';
 import { address, addressOneLine, phone, relocation } from '../data/location';
+import { showBodyTreatments, showSpaPackages } from '../data/services';
 
 interface Props {
   title?: string;
@@ -16,6 +17,18 @@ const {
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
+
+const serviceOffers = [
+  'Medical Massage Bellevue WA',
+  'Deep Tissue Massage Bellevue',
+  'Hot Stone Massage Bellevue',
+  'Facial Bellevue WA',
+  ...(showBodyTreatments ? ['Body Treatments Bellevue WA'] : []),
+  ...(showSpaPackages ? ['Spa Packages Bellevue'] : []),
+];
+const offerCatalog = JSON.stringify(
+  serviceOffers.map((name) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name } }))
+);
 
 const schemaDescription = relocation.active
   ? `Bellevue massage and spa. Medical massage, wellness massage, facials and body treatments. ${relocation.reason} Reopening at ${address.building}, ${addressOneLine}, on ${relocation.reopenLabel}, 2026, and operating from there through ${relocation.untilLabel}. Insurance accepted.`
@@ -59,13 +72,7 @@ const schemaDescription = relocation.active
     {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"09:00","closes":"21:00"}
   ],
   "areaServed":[{"@type":"City","name":"Bellevue"},{"@type":"City","name":"Kirkland"},{"@type":"City","name":"Issaquah"},{"@type":"City","name":"Mercer Island"},{"@type":"City","name":"Sammamish"},{"@type":"City","name":"Redmond"}],
-  "hasOfferCatalog":{"@type":"OfferCatalog","name":"Massage and Spa Services","itemListElement":[
-    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Medical Massage Bellevue WA"}},
-    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Deep Tissue Massage Bellevue"}},
-    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Hot Stone Massage Bellevue"}},
-    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Facial Bellevue WA"}},
-    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Spa Packages Bellevue"}}
-  ]},
+  "hasOfferCatalog":{"@type":"OfferCatalog","name":"Massage and Spa Services","itemListElement":${offerCatalog}},
   "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.1","reviewCount":"136","bestRating":"5"},
   "founder":{"@type":"Person","name":"Starla Schwartz","jobTitle":"Licensed Massage Practitioner, Spa Director"},
   "foundingDate":"2006"
