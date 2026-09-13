@@ -1,12 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { address } from '../data/location';
 import Banner from '../components/Banner.astro';
 ---
 <Layout
   title="Spa Gift Certificates Bellevue WA | All Star Massage and Spa"
   description="Give the gift of healing. Instant digital spa gift certificates for All Star Massage and Spa on Lake Bellevue. Any amount, any service, delivered by email.">
   <main class="page" id="main-content">
-<Banner image="photos/photo-banner-gift.jpg" imageAlt="Spa gift certificate All Star Massage and Spa Bellevue WA" height="250px">
+<Banner image="/photos/photo-banner-gift.jpg" imageAlt="Spa gift certificate All Star Massage and Spa Bellevue WA" height="250px">
     <h1 class="h1" style="color:white">Gift <em style="color:var(--sage-lt)">Certificates</em></h1>
     <p style="color:rgba(255,255,255,.78);font-size:.87rem;margin-top:.5rem">Give the gift of healing. Delivered instantly by email.</p>
   </Banner>
@@ -15,7 +16,7 @@ import Banner from '../components/Banner.astro';
       <div class="gift-mock">
         <small>All Star Massage &amp; Spa · Lake Bellevue</small>
         <h3>Gift Certificate</h3>
-        <p>For any service · Any amount<br>9 Lake Bellevue Drive · Bellevue, WA<br><br>A gift of healing, restoration, and peace.</p>
+        <p>For any service · Any amount<br>{address.street} · {address.city}, {address.region}<br><br>A gift of healing, restoration, and peace.</p>
       </div>
     </div>
     <div class="gift-opts">

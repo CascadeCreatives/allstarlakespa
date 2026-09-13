@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { address, addressOneLine } from '../data/location';
 ---
 <Layout
   title="Privacy Policy | All Star Massage and Spa Bellevue WA"
@@ -12,7 +13,7 @@ import Layout from '../layouts/Layout.astro';
     <p class="privacy-updated">Last updated: April 12, 2026</p>
 
     <h2>Who We Are</h2>
-    <p>All Star Massage and Spa ("we," "us," or "our") operates the website allstarlakespa.com. We are located at 9 Lake Bellevue Drive, Suite 112, Bellevue, WA 98005. You can reach us at <a href="tel:4254521772">425.452.1772</a>.</p>
+    <p>All Star Massage and Spa ("we," "us," or "our") operates the website allstarlakespa.com. We are located at {addressOneLine}. You can reach us at <a href="tel:4254521772">425.452.1772</a>.</p>
 
     <h2>Information We Collect</h2>
     <p>When you book an appointment, purchase a gift certificate, or contact us, we may collect your name, phone number, email address, and appointment preferences. We collect this information only as needed to provide our services and communicate with you.</p>
@@ -49,7 +50,7 @@ import Layout from '../layouts/Layout.astro';
 
     <h2>Contact Us</h2>
     <p>If you have questions about this privacy policy, please contact us:</p>
-    <p>All Star Massage and Spa<br>9 Lake Bellevue Drive, Suite 112<br>Bellevue, WA 98005<br><a href="tel:4254521772">425.452.1772</a></p>
+    <p>All Star Massage and Spa<br>{address.streetWithSuite}<br>{address.city}, {address.region} {address.postal}<br><a href="tel:4254521772">425.452.1772</a></p>
   </div>
   </main>
 </Layout>

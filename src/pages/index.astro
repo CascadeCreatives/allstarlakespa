@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { address, addressOneLine, relocation } from '../data/location';
 import InsuranceBadges from '../components/InsuranceBadges.astro';
 import YouTube from '../components/YouTube.astro';
 ---
@@ -18,7 +19,7 @@ import YouTube from '../components/YouTube.astro';
       <p class="hero-ph">Call us: <a href="tel:4254521772">425.452.1772</a> &nbsp;·&nbsp; Mon &amp; Fri 9am–7pm · Tue–Thu 10am–9pm · Sat 9am–9pm</p>
     </div>
     <div class="hero-r">
-      <img src="photos/photo-hero.jpg"
+      <img src="/photos/photo-hero.jpg"
         alt="Serene spa treatment room at All Star Massage and Spa on Lake Bellevue, Bellevue WA"
         width="900" height="700" loading="eager" fetchpriority="high">
       <div class="hero-badge" aria-label="20 years healing Bellevue">
@@ -40,22 +41,22 @@ import YouTube from '../components/YouTube.astro';
 
   <div class="strip" aria-label="Spa services gallery">
     <div class="strip-i">
-      <img src="photos/photo-strip-1.jpg"
+      <img src="/photos/photo-strip-1.jpg"
         alt="Relaxing massage therapy treatment Bellevue WA" width="400" height="270" loading="lazy">
       <div class="strip-lbl">Massage Therapy</div>
     </div>
     <div class="strip-i">
-      <img src="photos/photo-strip-2.jpg"
+      <img src="/photos/photo-strip-2.jpg"
         alt="Facial skin care treatment Bellevue WA spa" width="400" height="270" loading="lazy">
       <div class="strip-lbl">Facials &amp; Skin Care</div>
     </div>
     <div class="strip-i">
-      <img src="photos/photo-strip-3.jpg"
+      <img src="/photos/photo-strip-3.jpg"
         alt="Deep tissue massage therapy Bellevue WA" width="400" height="270" loading="lazy">
       <div class="strip-lbl">Deep Tissue Massage</div>
     </div>
     <div class="strip-i">
-      <img src="photos/photo-strip-4.jpg"
+      <img src="/photos/photo-strip-4.jpg"
         alt="Lake Bellevue Bellevue Washington — view from All Star Massage and Spa" width="400" height="270" loading="lazy">
       <div class="strip-lbl">Lake Bellevue View</div>
     </div>
@@ -70,37 +71,37 @@ import YouTube from '../components/YouTube.astro';
     </div>
     <div class="svc-grid" role="list">
       <a href="/services" class="svc-c" role="listitem">
-        <img src="photos/photo-strip-3.jpg" alt="Medical massage therapy pain relief Bellevue WA" width="600" height="155" loading="lazy">
+        <img src="/photos/photo-strip-3.jpg" alt="Medical massage therapy pain relief Bellevue WA" width="600" height="155" loading="lazy">
         <h3>Medical Massage</h3>
         <p>Insurance-billed therapeutic massage for pain relief and rehabilitation. In-network with Regence, Premera, BCBS, Aetna, United Healthcare, Kaiser, and more.</p>
         <span class="svc-lnk">Learn more →</span>
       </a>
       <a href="/services" class="svc-c" role="listitem">
-        <img src="photos/photo-svc-wellness.jpg" alt="Wellness massage Bellevue WA spa" width="600" height="155" loading="lazy">
+        <img src="/photos/photo-svc-wellness.jpg" alt="Wellness massage Bellevue WA spa" width="600" height="155" loading="lazy">
         <h3>Wellness &amp; Spa Massage</h3>
         <p>Hot stone, deep tissue, Swedish, sports, prenatal — our most popular treatments melt stress and renew your body, mind, and spirit.</p>
         <span class="svc-lnk">Learn more →</span>
       </a>
       <a href="/services" class="svc-c" role="listitem">
-        <img src="photos/photo-strip-1.jpg" alt="Facial skin care treatment Bellevue WA esthetician" width="600" height="155" loading="lazy">
+        <img src="/photos/photo-strip-1.jpg" alt="Facial skin care treatment Bellevue WA esthetician" width="600" height="155" loading="lazy">
         <h3>Facials &amp; Skin Care</h3>
         <p>Personalized facials including our signature European Facial. Expert skin care treatments tailored to your skin type. Glow from the inside out.</p>
         <span class="svc-lnk">Learn more →</span>
       </a>
       <a href="/services" class="svc-c" role="listitem">
-        <img src="photos/photo-strip-2.jpg" alt="Body treatment spa Bellevue WA Pacific Northwest" width="600" height="155" loading="lazy">
+        <img src="/photos/photo-strip-2.jpg" alt="Body treatment spa Bellevue WA Pacific Northwest" width="600" height="155" loading="lazy">
         <h3>Body Treatments</h3>
         <p>Restorative body wraps, mud treatments, and exfoliating scrubs using M'Lis products. Head-to-toe detox and nourishment.</p>
         <span class="svc-lnk">Learn more →</span>
       </a>
       <a href="/services" class="svc-c" role="listitem">
-        <img src="photos/photo-svc-packages.jpg" alt="Starlight spa package Lake Bellevue" width="600" height="155" style="object-position:center top" loading="lazy">
+        <img src="/photos/photo-svc-packages.jpg" alt="Starlight spa package Lake Bellevue" width="600" height="155" style="object-position:center top" loading="lazy">
         <h3>Starlight Spa Packages</h3>
         <p>Curated multi-treatment packages — massage, facial, body care combined. Perfect for birthdays, anniversaries, or a full restorative day on the lake.</p>
         <span class="svc-lnk">Learn more →</span>
       </a>
       <a href="/specials" class="svc-c" role="listitem">
-        <img src="photos/photo-svc-specials.jpg" alt="Spa day special Bellevue WA monthly offer" width="600" height="155" loading="lazy">
+        <img src="/photos/photo-svc-specials.jpg" alt="Spa day special Bellevue WA monthly offer" width="600" height="155" loading="lazy">
         <h3>Monthly Specials</h3>
         <p>This month: <strong>Take a Spa Day</strong> — foot soak, paraffin dip, facial, scalp massage, beverage and snack. Just $99. A new offer every month.</p>
         <span class="svc-lnk">View this month's specials →</span>
@@ -178,20 +179,24 @@ import YouTube from '../components/YouTube.astro';
     <div class="c lake-in">
       <div>
         <span class="lbl" style="color:var(--sage-lt)">Find Us · Bellevue, WA</span>
-        <h2 id="loc-h">Escape to <em style="color:var(--sage-lt)">the lake</em></h2>
+        <h2 id="loc-h">{relocation.active ? <>Find us at <em style="color:var(--sage-lt)">Bellewood Place</em></> : <>Escape to <em style="color:var(--sage-lt)">the lake</em></>}</h2>
         <div class="rule" style="background:var(--sage-lt)"></div>
-        <p>Nestled on the shores of Lake Bellevue — minutes from downtown yet a world apart. Unwind in our relaxation room, sip tea, and gaze out at the lake. Serving Bellevue, Kirkland, Issaquah, Mercer Island, Sammamish, Redmond, Newcastle, and Bothell.</p>
+        <p>{relocation.active
+          ? <>Following the recent fire at our Lake Bellevue location, we&rsquo;re temporarily welcoming guests at <strong>{address.building}</strong> &mdash; a quiet, wooded office park just off 112th Ave NE, minutes from downtown Bellevue, with free on-site parking. Reopening {relocation.reopenLabel}. Serving Bellevue, Kirkland, Issaquah, Mercer Island, Sammamish, Redmond, Newcastle, and Bothell.</>
+          : <>Nestled on the shores of Lake Bellevue &mdash; minutes from downtown yet a world apart. Unwind in our relaxation room, sip tea, and gaze out at the lake. Serving Bellevue, Kirkland, Issaquah, Mercer Island, Sammamish, Redmond, Newcastle, and Bothell.</>}</p>
         <a href="/contact" class="btn btn-g">Get Directions →</a>
       </div>
       <div class="lake-deets">
-        <img src="photos/photo-location.jpg"
-          alt="All Star Massage and Spa on Lake Bellevue Bellevue WA" width="600" height="220"
+        <img src={relocation.active ? "/photos/photo-bellewood-entrance.jpg" : "/photos/photo-location.jpg"}
+          alt={relocation.active
+            ? `Entrance to All Star Massage and Spa's temporary location at ${address.building}, ${address.streetWithSuite}, Bellevue WA`
+            : "All Star Massage and Spa on Lake Bellevue Bellevue WA"} width="600" height="220"
           style="width:100%;height:200px;object-fit:cover;object-position:center 60%;margin-bottom:1.5rem;filter:brightness(.95) saturate(1.1)"
           loading="lazy">
-        <div class="ld-i"><div class="ld-ic">📍</div><div><strong>Address</strong><p>9 Lake Bellevue Drive, Suite 112<br>Bellevue, WA 98005</p></div></div>
+        <div class="ld-i"><div class="ld-ic">📍</div><div><strong>{relocation.active ? "Temporary address" : "Address"}</strong><p>{address.streetWithSuite}<br>{address.city}, {address.region} {address.postal}{relocation.active && <><br /><em style="font-size:.8rem;color:var(--sage-lt);opacity:.85">{address.building} &middot; reopening {relocation.reopenLabel}</em></>}</p></div></div>
         <div class="ld-i"><div class="ld-ic">🕐</div><div><strong>Hours</strong><p>Mon &amp; Fri: 9:00 am – 7:00 pm<br>Tue / Wed / Thu: 10:00 am – 9:00 pm<br>Saturday: 9:00 am – 9:00 pm<br>Sunday: Closed</p></div></div>
         <div class="ld-i"><div class="ld-ic">📞</div><div><strong>Phone</strong><p><a href="tel:4254521772" style="color:var(--sage-lt)">425.452.1772</a></p></div></div>
-        <div class="ld-i"><div class="ld-ic">🚗</div><div><strong>Parking</strong><p>Free private lot · Easy I-405 &amp; SR-520 access</p></div></div>
+        <div class="ld-i"><div class="ld-ic">🚗</div><div><strong>Parking</strong><p>{relocation.active ? <>Free on-site lot at {address.building} &middot; Easy I-405 &amp; SR-520 access</> : <>Free private lot &middot; Easy I-405 &amp; SR-520 access</>}</p></div></div>
       </div>
     </div>
   </section>
@@ -203,7 +208,7 @@ import YouTube from '../components/YouTube.astro';
       <div class="rule"></div>
       <div class="faq-grid">
         <div class="faq-i"><h3>Does All Star accept health insurance for massage?</h3><p>Yes — we accept Regence, Premera, Blue Cross Blue Shield, Aetna, United Healthcare, Kaiser, and First Choice, as well as PIP and Workers' Comp. Please call your insurance to verify coverage before your visit: <a href="tel:4254521772">425.452.1772</a>.</p></div>
-        <div class="faq-i"><h3>Where exactly is the spa in Bellevue?</h3><p>We're at <strong>9 Lake Bellevue Drive, Suite 112, Bellevue, WA 98005</strong> — exclusively on Lake Bellevue with free parking. Just minutes from downtown Bellevue.</p></div>
+        <div class="faq-i"><h3>Where exactly is the spa in Bellevue?</h3><p>{relocation.active ? <>Following a fire at our Lake Bellevue location, we are <strong>temporarily located at {addressOneLine}</strong> ({address.building}), reopening {relocation.reopenLabel}. Free on-site parking, minutes from downtown Bellevue.</> : <>We're at <strong>{addressOneLine}</strong> — exclusively on Lake Bellevue with free parking. Just minutes from downtown Bellevue.</>}</p></div>
         <div class="faq-i"><h3>What types of massage do you offer?</h3><p>Medical massage, deep tissue, hot stone, Swedish, sports, prenatal, reflexology, and cupping. All customized to your individual needs by state-licensed therapists.</p></div>
         <div class="faq-i"><h3>How do I book a massage in Bellevue?</h3><p>Book online anytime at our <a href="https://www.secure-booker.com/allstarmassage/MakeAppointment/Search.aspx" target="_blank">secure booking page</a>, or call <a href="tel:4254521772">425.452.1772</a> Mon &amp; Fri 9am–7pm · Tue–Thu 10am–9pm · Sat 9am–9pm. Walk-ins welcome when available.</p></div>
         <div class="faq-i"><h3>Do you offer spa gift certificates?</h3><p>Yes! Instant digital gift certificates for any amount — delivered by email immediately. <a href="/gift">Purchase online 24/7</a>. Perfect for any occasion.</p></div>
