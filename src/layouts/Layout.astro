@@ -1,7 +1,9 @@
 ---
 import '../styles/global.css';
 import Nav from '../components/Nav.astro';
+import AlertBar from '../components/AlertBar.astro';
 import Footer from '../components/Footer.astro';
+import { address, addressOneLine, phone, relocation } from '../data/location';
 
 interface Props {
   title?: string;
@@ -14,6 +16,10 @@ const {
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
+
+const schemaDescription = relocation.active
+  ? `Bellevue massage and spa. Medical massage, wellness massage, facials and body treatments. ${relocation.reason} Reopening at ${address.building}, ${addressOneLine}, on ${relocation.reopenLabel}, 2026. Insurance accepted.`
+  : "Bellevue's premier lakeside massage and spa. Medical massage, wellness massage, facials and body treatments on Lake Bellevue. Insurance accepted.";
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +37,7 @@ const currentPath = Astro.url.pathname;
 <meta property="og:description" content="Heal. Restore. Renew. Bellevue's lakeside massage and spa. Medical massage, hot stone, facials, body treatments. Insurance accepted.">
 <meta property="og:image" content="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=1200">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCI+CiAgPCEtLSBEZWVwIGV1Y2FseXB0dXMgYmFja2dyb3VuZCDigJQgcmljaCwgbm90IG11ZGR5IC0tPgogIDxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiByeD0iMTgiIGZpbGw9IiMyMjMzMjgiLz4KICA8IS0tIDUgY3JlYW0gcGV0YWxzIOKAlCBib2xkIGVub3VnaCBmb3IgMTZweCwgZWxlZ2FudCBhdCA2NHB4IC0tPgogIDxwYXRoIGQ9Ik0gNjAuMDAsNDIuMDAgUSA2Mi4yMCwyNS41MCA1MC4wMCwxMi4wMCBRIDM3LjgwLDI1LjUwIDQwLjAwLDQyLjAwIFEgNTAuMDAsNTAuMDAgNjAuMDAsNDIuMDAgWiIgZmlsbD0iI2VkZTVkMCIvPgogIDxwYXRoIGQ9Ik0gNjAuNzAsNTcuMDQgUSA3Ny4wNyw1NC4wMyA4Ni4xNCwzOC4yNiBRIDY5LjUzLDMwLjgzIDU0LjUyLDM4LjAyIFEgNTAuMDAsNTAuMDAgNjAuNzAsNTcuMDQgWiIgZmlsbD0iI2VkZTVkMCIvPgogIDxwYXRoIGQ9Ik0gNDYuNjEsNjIuMzUgUSA1NC41Myw3Ni45OSA3Mi4zNCw4MC43NCBRIDc0LjI3LDYyLjY1IDYyLjc5LDUwLjU5IFEgNTAuMDAsNTAuMDAgNDYuNjEsNjIuMzUgWiIgZmlsbD0iI2VkZTVkMCIvPgogIDxwYXRoIGQ9Ik0gMzcuMjEsNTAuNTkgUSAyNS43Myw2Mi42NSAyNy42Niw4MC43NCBRIDQ1LjQ3LDc2Ljk5IDUzLjM5LDYyLjM1IFEgNTAuMDAsNTAuMDAgMzcuMjEsNTAuNTkgWiIgZmlsbD0iI2VkZTVkMCIvPgogIDxwYXRoIGQ9Ik0gNDUuNDgsMzguMDIgUSAzMC40NywzMC44MyAxMy44NiwzOC4yNiBRIDIyLjkzLDU0LjAzIDM5LjMwLDU3LjA0IFEgNTAuMDAsNTAuMDAgNDUuNDgsMzguMDIgWiIgZmlsbD0iI2VkZTVkMCIvPgogIDwhLS0gQ2VudGVyOiBkYXJrIGNpcmNsZSBwdW5jaGVzIGhvbGUsIHRoZW4gd2FybSBicmFzcyByaW5nLCBjcmVhbSBkb3QgLS0+CiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iOS41IiBmaWxsPSIjMjIzMzI4Ii8+CiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNi41IiBmaWxsPSIjYjhhMDYwIi8+CiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iMyIgZmlsbD0iI2VkZTVkMCIvPgo8L3N2Zz4=">
-{currentPath === '/' && <link rel="preload" as="image" href="photos/photo-hero.jpg" />}
+{currentPath === '/' && <link rel="preload" as="image" href="/photos/photo-hero.jpg" />}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -40,12 +46,12 @@ const currentPath = Astro.url.pathname;
   "@type":"MassageTherapist",
   "name":"All Star Massage and Spa",
   "alternateName":"All Star Lake Spa",
-  "description":"Bellevue's premier lakeside massage and spa. Medical massage, wellness massage, facials and body treatments on Lake Bellevue. Insurance accepted.",
+  "description":"${schemaDescription}",
   "url":"https://www.allstarlakespa.com",
-  "telephone":"+14254521772",
+  "telephone":"${phone.e164}",
   "priceRange":"\$\$",
-  "address":{"@type":"PostalAddress","streetAddress":"9 Lake Bellevue Drive, Suite 112","addressLocality":"Bellevue","addressRegion":"WA","postalCode":"98005","addressCountry":"US"},
-  "geo":{"@type":"GeoCoordinates","latitude":47.5980,"longitude":-122.1875},
+  "address":{"@type":"PostalAddress","streetAddress":"${address.streetWithSuite}","addressLocality":"${address.city}","addressRegion":"${address.region}","postalCode":"${address.postal}","addressCountry":"US"},
+  "geo":{"@type":"GeoCoordinates","latitude":${address.lat},"longitude":${address.lng}},
   "openingHoursSpecification":[
     {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday"],"opens":"09:00","closes":"19:00"},
     {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday"],"opens":"10:00","closes":"21:00"},
@@ -67,10 +73,27 @@ const currentPath = Astro.url.pathname;
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
+<AlertBar />
 <Nav currentPath={currentPath} />
 <slot />
 <Footer />
 <script is:inline>
+(function () {
+  var bar = document.getElementById('alertBar');
+  if (!bar) return;
+  function sync() {
+    document.documentElement.style.setProperty('--ah', bar.offsetHeight + 'px');
+  }
+  sync();
+  window.addEventListener('resize', sync);
+  window.addEventListener('load', sync);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(sync);
+  var lede = document.getElementById('alertLede');
+  if (lede) {
+    var open = new Date(lede.getAttribute('data-open') + 'T00:00:00-07:00');
+    if (new Date() >= open) lede.textContent = lede.getAttribute('data-after');
+  }
+})();
 function toggleMob() {
   const m = document.getElementById('mobMenu');
   if (!m) return;
