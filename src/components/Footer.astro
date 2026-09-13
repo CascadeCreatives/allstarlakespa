@@ -1,5 +1,6 @@
 ---
 import { address, permanentAddress, relocation, phone } from '../data/location';
+import { showBodyTreatments, showSpaPackages } from '../data/services';
 ---
 <footer>
   <div class="c">
@@ -7,7 +8,7 @@ import { address, permanentAddress, relocation, phone } from '../data/location';
       <div class="foot-brand">
         <h3 class="foot-brand-name">All Star Massage &amp; Spa</h3>
         <p class="foot-brand-loc">Bellevue · Washington · Est. 2006</p>
-        <p>Bellevue's premier lakeside massage and spa. Medical massage, wellness therapies, facials and body treatments. State-licensed. Insurance accepted. Est. 2006.</p>
+        <p>Bellevue's premier massage and spa. Medical massage, wellness therapies{showBodyTreatments ? ', facials and body treatments' : ' and facials'}. State-licensed. Insurance accepted. Est. 2006.</p>
         <p class="foot-phone"><a href="tel:4254521772">425.452.1772</a></p>
         <p class="foot-addr">{relocation.active && <span class="foot-temp">Temporarily at {address.building}</span>}{address.streetWithSuite}<br>{address.city}, {address.region} {address.postal}</p>
       </div>
@@ -17,8 +18,8 @@ import { address, permanentAddress, relocation, phone } from '../data/location';
         <a href="/services">Deep Tissue Massage</a>
         <a href="/services">Hot Stone Massage</a>
         <a href="/services">Facials Bellevue WA</a>
-        <a href="/services">Body Treatments</a>
-        <a href="/services">Spa Packages</a>
+        {showBodyTreatments && <a href="/services">Body Treatments</a>}
+        {showSpaPackages && <a href="/services">Spa Packages</a>}
       </div>
       <div class="foot-col">
         <h4>Visit</h4>
