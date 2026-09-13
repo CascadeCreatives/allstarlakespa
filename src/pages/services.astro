@@ -1,10 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { showBodyTreatments, showSpaPackages } from '../data/services';
 import Banner from '../components/Banner.astro';
 ---
 <Layout
-  title="Spa Services Bellevue WA | Massage, Facials & Body Treatments | All Star"
-  description="Medical massage, wellness massage, facials, body treatments and spa packages at All Star Massage and Spa on Lake Bellevue. State-licensed. Insurance accepted.">
+  title={showBodyTreatments
+    ? "Spa Services Bellevue WA | Massage, Facials & Body Treatments | All Star"
+    : "Spa Services Bellevue WA | Medical Massage, Wellness Massage & Facials | All Star"}
+  description={showBodyTreatments && showSpaPackages
+    ? "Medical massage, wellness massage, facials, body treatments and spa packages at All Star Massage and Spa in Bellevue. State-licensed. Insurance accepted."
+    : "Medical massage, wellness massage and facials at All Star Massage and Spa in Bellevue, WA. State-licensed therapists and estheticians. Insurance accepted."}>
   <main class="page" id="main-content">
   <Banner image="/photos/photo-banner-services.jpg" imageAlt="Massage and spa services All Star Lake Spa Bellevue WA" label="Bellevue, WA">
     <h1 class="h1" style="color:white">Massage &amp; Spa<br><em style="color:var(--sage-lt)">Services</em></h1>
@@ -63,6 +68,7 @@ import Banner from '../components/Banner.astro';
         <p class="note-s" style="margin-top:1.25rem">Please call your insurance to verify coverage for skin care treatments before your visit.</p>
       </div>
     </div>
+    {showBodyTreatments && (
     <div class="svc-blk">
       <div class="svc-blk-l">
         <div class="num">04</div>
@@ -77,6 +83,8 @@ import Banner from '../components/Banner.astro';
         <p class="note-s" style="margin-top:1rem"><strong>Spa Day Special:</strong> Scented foot soak, paraffin dip, classic facial, aromatic scalp massage, beverage &amp; snack — <!--EDIT:spaday_body_price-->$99<!--/EDIT:spaday_body_price-->. <a href="/specials">View current specials →</a></p>
       </div>
     </div>
+    )}
+    {showSpaPackages && (
     <div class="svc-blk">
       <div class="svc-blk-l">
         <div class="num">05</div>
@@ -91,6 +99,7 @@ import Banner from '../components/Banner.astro';
         <p class="note-s" style="margin-top:1rem">Design a custom package — call us: <a href="tel:4254521772">425.452.1772</a></p>
       </div>
     </div>
+    )}
   </div>
   </main>
 </Layout>

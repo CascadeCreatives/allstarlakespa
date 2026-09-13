@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { showBodyTreatments, showSpaPackages } from '../data/services';
 import { address, addressOneLine, relocation } from '../data/location';
 import InsuranceBadges from '../components/InsuranceBadges.astro';
 import YouTube from '../components/YouTube.astro';
@@ -69,7 +70,7 @@ import YouTube from '../components/YouTube.astro';
       <div class="rule"></div>
       <p class="body-s" style="max-width:500px">Every treatment is customized by our state-licensed therapists and estheticians. Whether you're healing, recovering, or restoring — we have a path for you.</p>
     </div>
-    <div class="svc-grid" role="list">
+    <div class:list={["svc-grid", { "svc-grid-2": [showBodyTreatments, showSpaPackages].filter(Boolean).length === 0 }]} role="list">
       <a href="/services" class="svc-c" role="listitem">
         <img src="/photos/photo-strip-3.jpg" alt="Medical massage therapy pain relief Bellevue WA" width="600" height="155" loading="lazy">
         <h3>Medical Massage</h3>
@@ -88,18 +89,22 @@ import YouTube from '../components/YouTube.astro';
         <p>Personalized facials including our signature European Facial. Expert skin care treatments tailored to your skin type. Glow from the inside out.</p>
         <span class="svc-lnk">Learn more →</span>
       </a>
+      {showBodyTreatments && (
       <a href="/services" class="svc-c" role="listitem">
         <img src="/photos/photo-strip-2.jpg" alt="Body treatment spa Bellevue WA Pacific Northwest" width="600" height="155" loading="lazy">
         <h3>Body Treatments</h3>
         <p>Restorative body wraps, mud treatments, and exfoliating scrubs using M'Lis products. Head-to-toe detox and nourishment.</p>
         <span class="svc-lnk">Learn more →</span>
       </a>
+      )}
+      {showSpaPackages && (
       <a href="/services" class="svc-c" role="listitem">
         <img src="/photos/photo-svc-packages.jpg" alt="Starlight spa package Lake Bellevue" width="600" height="155" style="object-position:center top" loading="lazy">
         <h3>Starlight Spa Packages</h3>
         <p>Curated multi-treatment packages — massage, facial, body care combined. Perfect for birthdays, anniversaries, or a full restorative day on the lake.</p>
         <span class="svc-lnk">Learn more →</span>
       </a>
+      )}
       <a href="/specials" class="svc-c" role="listitem">
         <img src="/photos/photo-svc-specials.jpg" alt="Spa day special Bellevue WA monthly offer" width="600" height="155" loading="lazy">
         <h3>Monthly Specials</h3>
