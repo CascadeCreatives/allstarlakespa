@@ -47,6 +47,8 @@ export const relocation = {
   reopenDate: '2026-09-15',
   reopenLabel: 'Tuesday, September 15',
   reopenShort: 'Tue, Sept 15',
+  /** How long the spa expects to operate from the temporary location. */
+  untilLabel: 'February 2027',
   reason:
     'Following a fire at our Lake Bellevue location, we have temporarily relocated to Bellewood Place.',
 };
