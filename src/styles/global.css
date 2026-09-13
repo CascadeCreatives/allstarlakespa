@@ -399,3 +399,7 @@ footer{flex-shrink:0;background:var(--char);color:rgba(250,249,247,.62);padding:
 .skip-link:focus{top:0}
 :focus-visible{outline:2px solid var(--sage-dk);outline-offset:2px}
 a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--sage-dk);outline-offset:2px}
+
+/* Service grid falls back to two columns when offerings are hidden */
+.svc-grid-2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:900px){.svc-grid-2{grid-template-columns:1fr}}
