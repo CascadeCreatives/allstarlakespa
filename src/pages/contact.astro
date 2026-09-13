@@ -9,7 +9,7 @@ import { address, addressOneLine, permanentAddress, relocation, mapsLink, mapsEm
     ? `Contact & Hours | All Star Massage and Spa | Temporarily at ${address.building}, Bellevue`
     : "Contact & Hours | All Star Massage and Spa | 425.452.1772"}
   description={relocation.active
-    ? `All Star Massage and Spa is temporarily located at ${addressOneLine} (${address.building}), reopening ${relocation.reopenLabel}. Call ${phone.display}. Mon & Fri 9am-7pm, Tue-Thu 10am-9pm, Sat 9am-9pm.`
+    ? `All Star Massage and Spa is temporarily located at ${addressOneLine} (${address.building}) through ${relocation.untilLabel}, reopening ${relocation.reopenLabel}. Call ${phone.display}. Mon & Fri 9am-7pm, Tue-Thu 10am-9pm, Sat 9am-9pm.`
     : `Contact All Star Massage and Spa at ${addressOneLine}. Call ${phone.display}. Mon & Fri 9am-7pm, Tue-Thu 10am-9pm, Sat 9am-9pm.`}>
   <main class="page" id="main-content">
 <Banner
@@ -32,7 +32,9 @@ import { address, addressOneLine, permanentAddress, relocation, mapsLink, mapsEm
         <h2 id="relo-h" class="h2">We&rsquo;ve moved &mdash; <em>temporarily</em></h2>
         <p class="relo-lede">
           Following the recent fire at our {permanentAddress.building} location, we are temporarily
-          relocating to the beautiful {address.building} office. <strong>We reopen {relocation.reopenLabel}.</strong>
+          relocating to the beautiful {address.building} office. <strong>We reopen {relocation.reopenLabel}</strong>,
+          and expect to be here through <strong>{relocation.untilLabel}</strong> while our
+          {permanentAddress.building} space is restored.
         </p>
         <div class="relo-addr">
           <span class="ci-lbl">Temporary address</span>
@@ -90,7 +92,7 @@ import { address, addressOneLine, permanentAddress, relocation, mapsLink, mapsEm
       <div>
         <span class="ci-lbl">{relocation.active ? 'Temporary address' : 'Address'}</span>
         <p><strong>{address.streetWithSuite}</strong><br>{address.city}, {address.region} {address.postal}</p>
-        {relocation.active && <p class="ci-note">{address.building} &middot; temporary location while our {permanentAddress.building} space is restored.</p>}
+        {relocation.active && <p class="ci-note">{address.building} &middot; our temporary home through {relocation.untilLabel}, while the {permanentAddress.building} space is restored.</p>}
         <a href={mapsLink} target="_blank" rel="noopener" class="ci-map-link">Open in Google Maps &rarr;</a>
       </div>
       <div>
