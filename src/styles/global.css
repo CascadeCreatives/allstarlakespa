@@ -283,6 +283,14 @@ em{font-style:italic;color:var(--sage-dk)}
 .relo-fig img{width:100%;height:auto;border:1px solid var(--stone-lt)}
 .relo-fig figcaption{font-size:.74rem;color:var(--stone);margin-top:.7rem;text-align:center;line-height:1.6}
 .relo-fig figcaption strong{color:var(--sage-dk);font-weight:500}
+.relo-slim{margin:3rem 0 0;padding:1.5rem 1.75rem;background:var(--cream);border:1px solid var(--stone-lt);border-left:3px solid var(--sage-dk)}
+.relo-slim .relo-tag{margin-bottom:.75rem}
+.relo-slim p{font-size:.9rem;line-height:1.75;color:#4c4740;max-width:70ch}
+.relo-slim strong{font-weight:500;color:var(--sage-dk)}
+.relo-slim-links{margin-top:.75rem;display:flex;gap:1.5rem;flex-wrap:wrap}
+.relo-slim-links a{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--sage-dk);border-bottom:1px solid var(--sage-lt)}
+@media(max-width:880px){.relo-slim{margin-top:2.25rem;padding:1.35rem 1.25rem}}
+
 .relo-gal{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;padding-top:2.25rem;border-top:1px solid var(--stone-lt)}
 .relo-gal img{width:100%;height:230px;object-fit:cover;border:1px solid var(--stone-lt)}
 .relo-gal figcaption{font-size:.74rem;color:var(--stone);margin-top:.6rem;line-height:1.6}
